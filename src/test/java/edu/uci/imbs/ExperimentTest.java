@@ -2,22 +2,18 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.jmatio.io.MatFileReader;
 import com.jmatio.types.MLArray;
-import com.jmatio.types.MLDouble;
 
 public class ExperimentTest {
 
-	private MatFileReader reader;
 	private Experiment experiment;
 
 	@Before
@@ -30,7 +26,7 @@ public class ExperimentTest {
 		Map<String, MLArray> contents = experiment.getMatlabFileContents(); 
 		MLArray matlabArray = contents.get("truth"); 
 		assertEquals(200, matlabArray.getM()); 
-//		printStuff(matlabArray); 
+//		printArrayDetails(matlabArray); 
 	}
 	@Test
 	public void verifyCueValiditiesSetAtInitiation() throws Exception {
@@ -56,7 +52,8 @@ public class ExperimentTest {
 		}
 	}
 
-	private void printStuff(MLArray matlabArray) {
+	@SuppressWarnings("unused")
+	private void printArrayDetails(MLArray matlabArray) {
 		System.out.println(matlabArray.getFlags());
 		System.out.println(matlabArray.getM());
 		System.out.println(matlabArray.getN());

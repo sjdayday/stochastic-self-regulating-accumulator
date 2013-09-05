@@ -2,11 +2,9 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.categories.Categories.ExcludeCategory;
 
 public class TrialTest {
 
@@ -14,7 +12,7 @@ public class TrialTest {
 
 	@Test
 	public void verifyLogOddsCalculatedForCueValidities() {
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		assertEquals(4.59511985013459, trial.logOddsForCue(0), .00000000000001); 
 		assertEquals(2.31363492918063, trial.logOddsForCue(1), .00000000000001); 
 		assertEquals(1.90095876119305, trial.logOddsForCue(2), .00000000000001); 
@@ -27,7 +25,7 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCueProfilesLoadedCorrectly() throws Exception {
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.A_POSITIVE,
@@ -58,26 +56,26 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCorrectAlternative(Alternative.A); 
 		assertEquals(Alternative.A, trial.getCorrectAlternative()); 
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfCueValiditiesNull() throws Exception {
-		Trial trial = new Trial(null);
+		trial = new Trial(null);
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfCueValiditiesEmpty() throws Exception {
-		Trial trial = new Trial(new Double[]{});
+		trial = new Trial(new Double[]{});
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyNumberOfCueProfilesMatchesNumberOfCueValidities() throws Exception {
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE); 
 	}
 	@Test(expected=IllegalStateException.class)
 	public void verifyThrowsIfCorrectAlternativeNotSet() throws Exception {
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.getCorrectAlternative().toString(); 
 	}
 
