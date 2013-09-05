@@ -15,11 +15,10 @@ package edu.uci.imbs;
  * <li>   ln(cue_validity / (1-cue_validity))
  * </sl>   
  * <p>
- * Utilization:  Setting up a trial for use requires the following steps.  In general, all trials in an experiment will share
- * the same cue validities.  Each trial will have a separate cue profile:  which alternatives are positive and negative for each cue.    
- * <ol>
- * <li> Trial.setCueValidities:  static method called before any Trial is instantiated
- * <li> addCueProfile:  An array of Boolean 2-element arrays, where the element pair indicates which of the alternatives has positive evidence:
+ * Utilization:  Trials are set up by an {@link Experiment}. Setting up a trial for use requires the following information  
+ * <ul>
+ * <li> cueValidities:  set in the initializer; all trials in an experiment will share the same cue validities.
+ * <li> cueProfile:  An array of Boolean 2-element arrays, where the element pair indicates which of the alternatives has positive evidence:
  * <pre>   trial.addCueProfile(Trial.BOTH_POSITIVE,
  *				Trial.A_POSITIVE,
  *				Trial.BOTH_NEGATIVE,
@@ -27,7 +26,7 @@ package edu.uci.imbs;
  * </pre>
  *    In this example, the first and third cues do not add evidence.  The second cue adds evidence for alternative A; 
  *    the fourth cue adds evidence for alternative B.  The cue profile array must be of the same length as the cue validities.
- * <li> setCorrectAlternative:  identify which alternative is correct, given the cue validities and profiles.  Note that this is given, not calculated.
+ * <li> correctAlternative:  identifies which alternative is correct, given the cue validities and cue profiles.  Note that this is given, not calculated.
  * </ul>
  *  
  * @author stevedoubleday
@@ -39,45 +38,35 @@ public class Trial {
 	public static Boolean[] BOTH_NEGATIVE = new Boolean[]{false, false};
 	public static Boolean[] A_POSITIVE = new Boolean[]{true, false};
 	public static Boolean[] B_POSITIVE = new Boolean[]{false, true};
-	private static boolean INITIALIZED = false;
-	private static Double[] CUE_VALIDITIES;
-	private static Double[] CUE_LOG_ODDS;
 	private Boolean[][] cueProfile;
 	private Double[] oddsPerCueForAlternativeA;
 	private Double[] oddsPerCueForAlternativeB;
 	private Double[] cumulativeOddsForAlternativeA;
 	private Double[] cumulativeOddsForAlternativeB;
 	private Alternative correctAlternative;
+	private Double[] cueValidities;
+	private Double[] cueLogOdds;
 
-	public static void setCueValidities(Double[] cueValidities) {
+	public Trial(Double[] cueValidities) {
 		validate(cueValidities); 
-		CUE_VALIDITIES = cueValidities; 
 		buildLogOddsForCueValidities(); 
-		INITIALIZED = true; 
 	}
-	private static void validate(Double[] cueValidities) {
+	private void validate(Double[] cueValidities) {
 		if ((cueValidities == null) || (cueValidities.length == 0))
 			throw new IllegalArgumentException("Trial.setCueValidities:  cue validities must be not-null and contain at least one element.");  
+		this.cueValidities = cueValidities; 
 	}
-	private static void buildLogOddsForCueValidities() {
-		CUE_LOG_ODDS = new Double[CUE_VALIDITIES.length]; 
-		for (int i = 0; i < CUE_VALIDITIES.length; i++) {
-			CUE_LOG_ODDS[i] = StrictMath.log(CUE_VALIDITIES[i]/(1-CUE_VALIDITIES[i])); 
+	private void buildLogOddsForCueValidities() {
+		cueLogOdds = new Double[cueValidities.length]; 
+		for (int i = 0; i < cueValidities.length; i++) {
+			cueLogOdds[i] = StrictMath.log(cueValidities[i]/(1-cueValidities[i])); 
 		}
 	}
-	public static double logOddsForCue(int i) {
-		return CUE_LOG_ODDS[i];
+	public double logOddsForCue(int i) {
+		return cueLogOdds[i];
 	}
-	public static void resetForTesting() {
-		CUE_VALIDITIES = null;
-		CUE_LOG_ODDS = null;
-		INITIALIZED = false; 
-	}
-	public Trial() {
-		if (!INITIALIZED) throw new IllegalStateException("Trial: setCueValidities must be invoked before a Trial can be created.");
-	}
-	public void addCueProfiles(Boolean[]... cueProfile) {
-		if (cueProfile.length != CUE_VALIDITIES.length) throw new IllegalArgumentException("Trial.addCueProfile:  the number of cue profiles must equal the number of cue validities.");
+	public void setCueProfile(Boolean[]... cueProfile) {
+		if (cueProfile.length != cueValidities.length) throw new IllegalArgumentException("Trial.addCueProfile:  the number of cue profiles must equal the number of cue validities.");
 		this.cueProfile = cueProfile;
 		accumulateOdds(); 
 	}
@@ -88,7 +77,7 @@ public class Trial {
 		this.cumulativeOddsForAlternativeB = accumulateOddsForAlternative(Alternative.B); 
 	}
 	private Double[] accumulateOddsForAlternative(Alternative alternative) {
-		Double[] cumulativeOdds = new Double[CUE_VALIDITIES.length];
+		Double[] cumulativeOdds = new Double[cueValidities.length];
 		Double total = 0d;
 		Double[] tempOdds = (alternative.equals(Alternative.A)) ? oddsPerCueForAlternativeA : oddsPerCueForAlternativeB; 
 		for (int i = 0; i < tempOdds.length; i++) {
@@ -98,9 +87,9 @@ public class Trial {
 		return cumulativeOdds;
 	}
 	private Double[] buildOddsPerCueForAlternative(Alternative alternative) {
-		Double[] odds = new Double[CUE_VALIDITIES.length];
+		Double[] odds = new Double[cueValidities.length];
 		for (int i = 0; i < odds.length; i++) {
-			odds[i] = (onlyThisAlternativePositive(i, alternative)) ? CUE_LOG_ODDS[i] : 0;
+			odds[i] = (onlyThisAlternativePositive(i, alternative)) ? cueLogOdds[i] : 0;
 		}
 		return odds;
 	} 

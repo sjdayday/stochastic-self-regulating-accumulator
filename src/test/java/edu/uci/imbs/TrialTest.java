@@ -11,28 +11,24 @@ import org.junit.experimental.categories.Categories.ExcludeCategory;
 public class TrialTest {
 
 	private Trial trial;
-	@Before
-	public void setUp() throws Exception {
-		Trial.resetForTesting(); 
-	}
+
 	@Test
 	public void verifyLogOddsCalculatedForCueValidities() {
-		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		assertEquals(4.59511985013459, Trial.logOddsForCue(0), .00000000000001); 
-		assertEquals(2.31363492918063, Trial.logOddsForCue(1), .00000000000001); 
-		assertEquals(1.90095876119305, Trial.logOddsForCue(2), .00000000000001); 
-		assertEquals(1.26566637333128, Trial.logOddsForCue(3), .00000000000001); 
-		assertEquals(1.20831120592453, Trial.logOddsForCue(4), .00000000000001); 
-		assertEquals(1.09861228866811, Trial.logOddsForCue(5), .00000000000001); 
-		assertEquals(0.895384047054841, Trial.logOddsForCue(6), .00000000000001); 
-		assertEquals(0.241162056816888, Trial.logOddsForCue(7), .00000000000001); 
-		assertEquals(0.0400053346136992, Trial.logOddsForCue(8), .00000000000001); 
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		assertEquals(4.59511985013459, trial.logOddsForCue(0), .00000000000001); 
+		assertEquals(2.31363492918063, trial.logOddsForCue(1), .00000000000001); 
+		assertEquals(1.90095876119305, trial.logOddsForCue(2), .00000000000001); 
+		assertEquals(1.26566637333128, trial.logOddsForCue(3), .00000000000001); 
+		assertEquals(1.20831120592453, trial.logOddsForCue(4), .00000000000001); 
+		assertEquals(1.09861228866811, trial.logOddsForCue(5), .00000000000001); 
+		assertEquals(0.895384047054841, trial.logOddsForCue(6), .00000000000001); 
+		assertEquals(0.241162056816888, trial.logOddsForCue(7), .00000000000001); 
+		assertEquals(0.0400053346136992, trial.logOddsForCue(8), .00000000000001); 
 	}
 	@Test
 	public void verifyCueProfilesLoadedCorrectly() throws Exception {
-		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		trial = new Trial();  
-		trial.addCueProfiles(Trial.BOTH_POSITIVE,
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.A_POSITIVE,
 				Trial.B_POSITIVE,
@@ -62,33 +58,26 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
-		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		trial = new Trial();  
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCorrectAlternative(Alternative.A); 
 		assertEquals(Alternative.A, trial.getCorrectAlternative()); 
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfCueValiditiesNull() throws Exception {
-		Trial.setCueValidities(null);
+		Trial trial = new Trial(null);
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfCueValiditiesEmpty() throws Exception {
-		Trial.setCueValidities(new Double[]{});
-	}
-	@Test(expected=IllegalStateException.class)
-	public void verifyThrowsOnFirstUseIfNotInitialized() throws Exception {
-		trial = new Trial();  
+		Trial trial = new Trial(new Double[]{});
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyNumberOfCueProfilesMatchesNumberOfCueValidities() throws Exception {
-		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		trial = new Trial();  
-		trial.addCueProfiles(Trial.BOTH_POSITIVE); 
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE); 
 	}
 	@Test(expected=IllegalStateException.class)
 	public void verifyThrowsIfCorrectAlternativeNotSet() throws Exception {
-		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		trial = new Trial();  
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.getCorrectAlternative().toString(); 
 	}
 

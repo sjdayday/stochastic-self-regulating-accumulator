@@ -34,7 +34,6 @@ public class Experiment {
 	private void buildTrials() {
 		double[][] truth = getDoubleArray(TRUTH);  
 		double[][] answers = getDoubleArray(ANSWERS);  
-		Trial.setCueValidities(cueValidities); 
 		buildTrialsWithCorrectAlternatives(truth);
 		updateTrialsWithCueProfiles(answers);
 	}
@@ -47,7 +46,7 @@ public class Experiment {
 			for (int j = 0; j < answers.length; j++) {
 				cueProfiles[j] = convertAnswersToCueProfile(answers[j][index],answers[j][index+1]); 
 			}
-			trials.get(i).addCueProfiles(cueProfiles);
+			trials.get(i).setCueProfile(cueProfiles);
 		}
 	}
 	private Boolean[] convertAnswersToCueProfile(double a, double b) {
@@ -60,7 +59,7 @@ public class Experiment {
 		trials = new ArrayList<Trial>(); 
 		Trial trial = null; 
 		for (int i = 0; i < truth.length; i++) {
-			trial = new Trial(); 
+			trial = new Trial(cueValidities); 
 			trial.setCorrectAlternative(convertTruthToAlternative(truth[i][0])); 
 			trials.add(trial);
 		}
