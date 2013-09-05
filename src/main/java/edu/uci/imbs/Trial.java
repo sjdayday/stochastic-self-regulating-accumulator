@@ -76,7 +76,7 @@ public class Trial {
 	public Trial() {
 		if (!INITIALIZED) throw new IllegalStateException("Trial: setCueValidities must be invoked before a Trial can be created.");
 	}
-	public void addCueProfile(Boolean[]... cueProfile) {
+	public void addCueProfiles(Boolean[]... cueProfile) {
 		if (cueProfile.length != CUE_VALIDITIES.length) throw new IllegalArgumentException("Trial.addCueProfile:  the number of cue profiles must equal the number of cue validities.");
 		this.cueProfile = cueProfile;
 		accumulateOdds(); 
@@ -117,5 +117,8 @@ public class Trial {
 	public Alternative getCorrectAlternative() {
 		if (correctAlternative == null) throw new IllegalStateException("Trial.getCorrectAlternative:  setCorrectAlternative must be invoked before the correct alternative can be retrieved.");
 		return correctAlternative;
+	}
+	public Boolean[][] getCueProfile() {
+		return cueProfile;
 	}
 }

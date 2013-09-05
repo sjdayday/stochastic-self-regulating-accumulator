@@ -32,7 +32,7 @@ public class TrialTest {
 	public void verifyCueProfilesLoadedCorrectly() throws Exception {
 		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial = new Trial();  
-		trial.addCueProfile(Trial.BOTH_POSITIVE,
+		trial.addCueProfiles(Trial.BOTH_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.A_POSITIVE,
 				Trial.B_POSITIVE,
@@ -83,7 +83,7 @@ public class TrialTest {
 	public void verifyNumberOfCueProfilesMatchesNumberOfCueValidities() throws Exception {
 		Trial.setCueValidities(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial = new Trial();  
-		trial.addCueProfile(Trial.BOTH_POSITIVE); 
+		trial.addCueProfiles(Trial.BOTH_POSITIVE); 
 	}
 	@Test(expected=IllegalStateException.class)
 	public void verifyThrowsIfCorrectAlternativeNotSet() throws Exception {
