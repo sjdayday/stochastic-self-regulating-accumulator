@@ -2,6 +2,7 @@
 
 package edu.uci.imbs;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -55,6 +56,23 @@ public class TrialTest {
 		assertEquals(2.20105575499982, trial.accumulatedOddsForAlternativeAfterCue(Alternative.B, 8), .0000001); 
 	}
 	@Test
+	public void verifyCorrectResponseForAlternativeForCue() throws Exception {
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.A_POSITIVE,
+				Trial.B_POSITIVE,
+				Trial.A_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.B_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.B_POSITIVE); 
+		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.A, 0)); 
+		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.B, 0)); 
+		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.A, 2)); 
+		assertEquals(0,trial.getResponseForAlternativeForCue(Alternative.B, 2)); 
+	}
+	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
 		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCorrectAlternative(Alternative.A); 
@@ -77,6 +95,13 @@ public class TrialTest {
 	public void verifyThrowsIfCorrectAlternativeNotSet() throws Exception {
 		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.getCorrectAlternative().toString(); 
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void verifyThrowsIfResponseOutOfRangeForAlternativeForCue() throws Exception {
+		trial = new Trial(new Double[]{.99, .91});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.B_POSITIVE); 
+		trial.getResponseForAlternativeForCue(Alternative.A, 2);		
 	}
 
 }

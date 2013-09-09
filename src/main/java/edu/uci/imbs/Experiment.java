@@ -12,6 +12,26 @@ import com.jmatio.io.MatFileReader;
 import com.jmatio.types.MLArray;
 import com.jmatio.types.MLDouble;
 
+/**
+ * Experiment represents a set of {@link Trial}s.  An experiment is initialized with a set of cue validities (see {@link Trial}), 
+ * which will be identical for every trial in the experiment.    
+ * <p>
+ * The initial setup for the experiment is loaded from a Matlab configuration file.  
+ * The test class assumes this class is:  data\exp2p1.mat
+ * <p>
+ * The configuration file is expected to contain two arrays, named and structured as follows:
+ * <ul>
+ * <li>truth:  one-column array of doubles, where 1.0 means {@link Alternative} A is correct, 
+ * 	and 0.0 means {@link Alternative} B is correct.  The number of rows in the array defines the number of Trials to be created.
+ * <li>answers: 3-dimensional array, where the first dimension is of the same length as the cue validities.
+ * The second dimension is two doubles, representing whether an alternative is positive (1.0) or negative (0.0); one value for Alternative A and B, respectively.    
+ * The third dimension is the number of Trials (must be same as the number of rows in the truth array.)
+ * </ul>
+ * 
+ * @author stevedoubleday
+ *
+ */
+
 public class Experiment {
 
 	private static final String TRUTH = "truth";
