@@ -2,7 +2,6 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;

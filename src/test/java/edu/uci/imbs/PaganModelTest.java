@@ -75,6 +75,7 @@ public class PaganModelTest {
 			results.add(result); 
 			line = reader.readLine(); 
 		}
+		reader.close(); 
 		return results;
 	}
 
