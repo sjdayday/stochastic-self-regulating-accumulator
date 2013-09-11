@@ -110,7 +110,7 @@ public class Trial {
 	public Boolean[][] getCueProfile() {
 		return cueProfile;
 	}
-	public int getResponseForAlternativeForCue(Alternative alternative, int requestedCue) {
+	public int getResponseForCue(Alternative alternative, int requestedCue) {
 		if ((requestedCue < 0) || (requestedCue >= cueProfile.length)) throw new IllegalArgumentException("Trial.getResponseForAlternativeForCue:  the cue requested must not be less than 0 or greater than: "+(cueProfile.length-1)+" was "+requestedCue);
 		Boolean[] cue = cueProfile[requestedCue];  
 		return (cue[alternative.arrayPosition()]) ? 1 : 0;

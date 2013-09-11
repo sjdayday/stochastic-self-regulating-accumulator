@@ -67,10 +67,10 @@ public class TrialTest {
 				Trial.B_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.B_POSITIVE); 
-		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.A, 0)); 
-		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.B, 0)); 
-		assertEquals(1,trial.getResponseForAlternativeForCue(Alternative.A, 2)); 
-		assertEquals(0,trial.getResponseForAlternativeForCue(Alternative.B, 2)); 
+		assertEquals(1,trial.getResponseForCue(Alternative.A, 0)); 
+		assertEquals(1,trial.getResponseForCue(Alternative.B, 0)); 
+		assertEquals(1,trial.getResponseForCue(Alternative.A, 2)); 
+		assertEquals(0,trial.getResponseForCue(Alternative.B, 2)); 
 	}
 	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
@@ -101,7 +101,7 @@ public class TrialTest {
 		trial = new Trial(new Double[]{.99, .91});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.B_POSITIVE); 
-		trial.getResponseForAlternativeForCue(Alternative.A, 2);		
+		trial.getResponseForCue(Alternative.A, 2);		
 	}
 
 }
