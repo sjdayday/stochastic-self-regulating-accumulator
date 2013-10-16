@@ -1,0 +1,1226 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>StochasticSraModelRunner</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>26</wrong>
+      <ignores>0</ignores>
+      <exceptions>26</exceptions>
+    </counts>
+    <runTimeInMillis>554</runTimeInMillis>
+    <content><![CDATA[<table border="1" cellspacing="0">
+	<tr>
+		<td>edu.uci.imbs.fit.SraFixture</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td>sra parameter space</td>
+	</tr>
+</table>
+<br/>We begin by defining the protection parameter space.<br/><br/>To comment any line, precede it with "|note".<br/><br/>Uncomment the following line to rebuild a parameter space from an existing file (change the filename).  <i>This will override all the subsequent input.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>note</td>
+		<td>Rebuild parameter space from file</td>
+		<td>/Users/stevedoubleday/Downloads/Fitnesse-Apr2011/ScenarioSet_19/parameterSpaceScenario_19_classnames_changed.xml</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td>Build parameter space named</td>
+		<td colspan="3">Analytical equilibrium, no thrive, all survive, mimicry, .01 tolerance (2970)</td>
+	</tr>
+	<tr>
+		<td>Current class is</td>
+		<td colspan="3">edu.uci.imbs.actor.ProtectionParameters</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>use role shifting dynamic</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">ROLE_SHIFTING</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>actors who do worse shift to role of actors who do better</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MIMIC_BETTER_PERFORMING_POPULATION</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>multiple bandits prey on multiple peasants</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MULTIPLE_BANDITS_PREY_ON_MULTIPLE_PEASANTS</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>only bandits and peasants interact</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">NORMAL_INTERACTION_PATTERN</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>number of runs to reach equilibrium or stop</td>
+		<td>with values</td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">RUN_LIMIT</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>maximum population size before run stops</td>
+		<td>with values</td>
+		<td>25000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MAXIMUM_POPULATION_SIZE</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>number of consecutive periods without adjustment defines equilibrium</td>
+		<td>with values</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">EQUILIBRIUM_NUMBER_PERIODS_WITHOUT_ADJUSTMENT</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>threshold at which actors survive</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">SURVIVE_THRESHOLD</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>threshold at which actors thrive</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">THRIVE_THRESHOLD</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>bandit-peasant payoff discrepancy tolerance</td>
+		<td>with values</td>
+		<td>.01</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">PAYOFF_DISCREPANCY_TOLERANCE</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>percent of lowest surviving actors to shift roles</td>
+		<td>with values</td>
+		<td>.05, .1, .2</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">ADJUSTMENT_FACTOR_PERCENTAGE</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>initial number of peasants</td>
+		<td>with values</td>
+		<td>1000, 2000, 3000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">NUMBER_PEASANTS</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>initial number of bandits</td>
+		<td>with values</td>
+		<td>1000, 2000, 3000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">NUMBER_BANDITS</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>maximum number of peasants a bandit will prey upon</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MAX_PEASANTS_TO_PREY_UPON</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>cost to bandit to prey on one peasant</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">COST_TO_PREY_ON_SINGLE_PEASANT</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>use matching function to limit number of peasants bandit successfully preys on</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">BANDITS_USE_MATCHING_FUNCTION</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>matching function exponent for number of bandits</td>
+		<td>with values</td>
+		<td>0.5</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MATCHING_FUNCTION_ALPHA_EXPONENT</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>matching function exponent for number of peasants</td>
+		<td>with values</td>
+		<td>0.5</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MATCHING_FUNCTION_BETA_EXPONENT</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>matching function constant multiplier</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">MATCHING_FUNCTION_MU</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>gamma for contest function</td>
+		<td>with values</td>
+		<td>.5, .55, .6, .65, .7, .75, .8, .85, .9, .95, 1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">CONTEST_FUNCTION_GAMMA</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>force peasants to one of two protection proportions</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_TO_HIGH_LOW</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>force peasants low protection proportion</td>
+		<td>with values</td>
+		<td>0.1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_LOW_PROPORTION</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>force peasants high protection proportion</td>
+		<td>with values</td>
+		<td>0.7</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticDoubleFieldToUpdateIs(ParameterSpaceFixture.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_HIGH_PROPORTION</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>number peasants with low protection proportion</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticIntegerFieldToUpdateIs(ParameterSpaceFixture.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_LOW_INITIAL_PEASANTS</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>role shifting dynamic allocates new peasant with protection proportion</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticBooleanFieldToUpdateIs(ParameterSpaceFixture.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">NEW_PEASANT_GETS_BEST_PROTECTION_PROPORTION</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>random number seed</td>
+		<td>with values</td>
+		<td>1234567890123456789, -5667349224149818212, 6515921335490448286, -8788681650301948134, -4514942521186627771, 7323449491256553230, -4614269149927667521, 7562077152359325602, -126980190151879182, 3190657484983120391</td>
+	</tr>
+	<tr>
+		<td class="error">Static Long field to update is<hr><pre><div class="fit_stacktrace">org.grayleaves.utility.InvalidStaticParameterException: StaticParameterUpdater.createClass:  Could not create class for: edu.uci.imbs.actor.ProtectionParameters
+	at org.grayleaves.utility.StaticParameterUpdater.createClass(StaticParameterUpdater.java:94)
+	at org.grayleaves.utility.StaticParameterUpdater.<init>(StaticParameterUpdater.java:41)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.buildParameter(ParameterSpaceFixture.java:104)
+	at org.grayleaves.utility.fit.ParameterSpaceFixture.staticLongFieldToUpdateIs(ParameterSpaceFixture.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fitlibrary.closure.MethodClosure.invoke(MethodClosure.java:49)
+	at fitlibrary.closure.MethodClosure.invokeTyped(MethodClosure.java:35)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:83)
+	at fitlibrary.closure.CalledMethodTarget.invokeTyped(CalledMethodTarget.java:103)
+	at fitlibrary.traverse.workflow.caller.DoActionCaller.run(DoActionCaller.java:40)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.pickAndRunValidCaller(DispatchRowInFlow.java:98)
+	at fitlibrary.traverse.workflow.DispatchRowInFlow.interpretRow(DispatchRowInFlow.java:53)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRowBeforeWrapping(DoTraverse.java:99)
+	at fitlibrary.traverse.workflow.DoTraverse.interpretRow(DoTraverse.java:96)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:80)
+	at fitlibrary.flow.DoFlowOnTable.runTable(DoFlowOnTable.java:56)
+	at fitlibrary.flow.DoFlow.runTable(DoFlow.java:104)
+	at fitlibrary.flow.DoFlow.runSingleTable(DoFlow.java:89)
+	at fitlibrary.flow.DoFlowWithExtraTableAddedWhenNeeded.runStorytest(DoFlowWithExtraTableAddedWhenNeeded.java:33)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:92)
+	at fitlibrary.suite.BatchFitLibrary.doStorytest(BatchFitLibrary.java:50)
+	at fitlibrary.suite.BatchFitLibrary.doTables(BatchFitLibrary.java:107)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:36)
+	at fitlibrary.suite.FitLibraryServer.doTables(FitLibraryServer.java:28)
+	at fit.FitServerBridge.process(FitServerBridge.java:76)
+	at fit.FitServerBridge.run(FitServerBridge.java:60)
+	at fitlibrary.suite.FitLibraryServer.main(FitLibraryServer.java:54)
+</div></pre></td>
+		<td colspan="3">RANDOM_SEED</td>
+	</tr>
+</table>
+<br/><br/>Matching functions are discussed <a href="http://en.wikipedia.org/wiki/Matching_theory_%28economics%29">here</a>.  The matching function result is then divided by the number of bandits (and capped at 1.0, if necessary) to give a percentage of the number of attempts at predation that will be successful for any individual bandit.  <br/><br/>The parameter space can either be built from the input above, or rebuilt from an existing file.  When a parameter space is rebuilt, the input values from above are ignored.  (The only way to see the input that is being used is to look in the xml file that is being used to build the file.)   <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>show</td>
+		<td>Parameter space source</td>
+	<td bgcolor=#C0C0FF>Analytical equilibrium, no thrive, all survive, mimicry, .01 tolerance (2970)</td></tr>
+</table>
+<br/>Show the number of parameter points in the parameter space.  <i>Exercise caution here; if the number is very large, extreme execution times will result.  Consider reducing the number of values for one or more parameters to shrink the parameter space to something manageable.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>show</td>
+		<td>Parameter space size</td>
+	<td bgcolor=#C0C0FF>1</td></tr>
+</table>
+<br/><br/>Show the parameters in the parameter space:<br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>Parameters</td>
+	</tr>
+	<tr>
+		<td>name</td>
+	</tr>
+	<tr>
+		<td class="fail">use role shifting dynamic <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">actors who do worse shift to role of actors who do better <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">multiple bandits prey on multiple peasants <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">only bandits and peasants interact <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">number of runs to reach equilibrium or stop <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">maximum population size before run stops <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">number of consecutive periods without adjustment defines equilibrium <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">threshold at which actors survive <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">threshold at which actors thrive <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">bandit-peasant payoff discrepancy tolerance <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">percent of lowest surviving actors to shift roles <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">initial number of peasants <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">initial number of bandits <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">maximum number of peasants a bandit will prey upon <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">cost to bandit to prey on one peasant <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">use matching function to limit number of peasants bandit successfully preys on <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">matching function exponent for number of bandits <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">matching function exponent for number of peasants <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">matching function constant multiplier <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">gamma for contest function <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">force peasants to one of two protection proportions <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">force peasants low protection proportion <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">force peasants high protection proportion <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">number peasants with low protection proportion <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">role shifting dynamic allocates new peasant with protection proportion <span class="fit_label">missing</span></td>
+	</tr>
+	<tr>
+		<td class="fail">random number seed <span class="fit_label">missing</span></td>
+	</tr>
+</table>
+<br/>To execute the scenarios with the parameters above, remove the comment:  "|run scenarios|"<br/>It's a good idea to keep this line commented until you have changed the parameters as you want them for a particular scenario set, and tested that they are accepted, and that the size of the parameter space is reasonable. <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>note</td>
+		<td>run scenarios</td>
+	</tr>
+</table>
+]]></content>
+    <relativePageName>StochasticSraModelRunner</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+

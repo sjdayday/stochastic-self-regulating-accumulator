@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>StochasticSraModelRunner</rootPath>
+    <result>
+    <counts>
+      <right>4</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>618</runTimeInMillis>
+    <content><![CDATA[<table border="1" cellspacing="0">
+	<tr>
+		<td>edu.uci.imbs.fit.SraFixture</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td>sra parameter space</td>
+	</tr>
+</table>
+<br/>We begin by defining the protection parameter space.<br/><br/>To comment any line, precede it with "|note".<br/><br/>Uncomment the following line to rebuild a parameter space from an existing file (change the filename).  <i>This will override all the subsequent input.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>note</td>
+		<td>Rebuild parameter space from file</td>
+		<td>/Users/stevedoubleday/Downloads/Fitnesse-Apr2011/ScenarioSet_19/parameterSpaceScenario_19_classnames_changed.xml</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td>Build parameter space named</td>
+		<td colspan="3">Verify single point</td>
+	</tr>
+	<tr>
+		<td>Current class is</td>
+		<td colspan="3">edu.uci.imbs.PaganParameterSource</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>K</td>
+		<td>with values</td>
+		<td>3.7</td>
+	</tr>
+	<tr>
+		<td>Static Double field to update is</td>
+		<td colspan="3">K</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>Tau</td>
+		<td>with values</td>
+		<td>2.67</td>
+	</tr>
+	<tr>
+		<td>Static Double field to update is</td>
+		<td colspan="3">TAU</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>Kappa</td>
+		<td>with values</td>
+		<td>1.55</td>
+	</tr>
+	<tr>
+		<td>Static Double field to update is</td>
+		<td colspan="3">KAPPA</td>
+	</tr>
+	<tr>
+		<td>Array parameter named</td>
+		<td>Lambda</td>
+		<td>with values</td>
+		<td>0.28</td>
+	</tr>
+	<tr>
+		<td>Static Double field to update is</td>
+		<td colspan="3">LAMBDA</td>
+	</tr>
+</table>
+<br/>The parameter space can either be built from the input above, or rebuilt from an existing file.  When a parameter space is rebuilt, the input values from above are ignored.  (The only way to see the input that is being used is to look in the xml file that is being used to build the file.)   <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>show</td>
+		<td>Parameter space source</td>
+	<td bgcolor=#C0C0FF>Verify single point</td></tr>
+</table>
+<br/>Show the number of parameter points in the parameter space.  <i>Exercise caution here; if the number is very large, extreme execution times will result.  Consider reducing the number of values for one or more parameters to shrink the parameter space to something manageable.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>show</td>
+		<td>Parameter space size</td>
+	<td bgcolor=#C0C0FF>1</td></tr>
+</table>
+<br/>Show the parameters in the parameter space:<br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>Parameters</td>
+	</tr>
+	<tr>
+		<td>name</td>
+	</tr>
+	<tr>
+		<td class="pass">K</td>
+	</tr>
+	<tr>
+		<td class="pass">Tau</td>
+	</tr>
+	<tr>
+		<td class="pass">Kappa</td>
+	</tr>
+	<tr>
+		<td class="pass">Lambda</td>
+	</tr>
+</table>
+<br/>To execute the scenarios with the parameters above, remove the comment:  "|run scenarios|"<br/>It's a good idea to keep this line commented until you have changed the parameters as you want them for a particular scenario set, and tested that they are accepted, and that the size of the parameter space is reasonable. <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>run scenarios</td>
+	</tr>
+</table>
+]]></content>
+    <relativePageName>StochasticSraModelRunner</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+

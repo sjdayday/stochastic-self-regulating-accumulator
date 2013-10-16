@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20110104</FitNesseVersion>
+  <rootPath>StochasticSraModelRunner</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>85</exceptions>
+    </counts>
+    <runTimeInMillis>405</runTimeInMillis>
+    <content><![CDATA[<table border="1" cellspacing="0">
+	<tr>
+		<td>edu.uci.imbs.fit.SraFixture</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td class="error">sra parameter space<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getSraParameterSpace() { }</li><li>public Type sraParameterSpace() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+</table>
+<br/>We begin by defining the protection parameter space.<br/><br/>To comment any line, precede it with "|note".<br/><br/>Uncomment the following line to rebuild a parameter space from an existing file (change the filename).  <i>This will override all the subsequent input.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>note</td>
+		<td>Rebuild parameter space from file</td>
+		<td>/Users/stevedoubleday/Downloads/Fitnesse-Apr2011/ScenarioSet_19/parameterSpaceScenario_19_classnames_changed.xml</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td class="error">Build parameter space named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type buildParameterSpaceNamed(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">Analytical equilibrium, no thrive, all survive, mimicry, .01 tolerance (2970)</td>
+	</tr>
+	<tr>
+		<td class="error">Current class is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type currentClassIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">edu.uci.imbs.actor.ProtectionParameters</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>use role shifting dynamic</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">ROLE_SHIFTING</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>actors who do worse shift to role of actors who do better</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MIMIC_BETTER_PERFORMING_POPULATION</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>multiple bandits prey on multiple peasants</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MULTIPLE_BANDITS_PREY_ON_MULTIPLE_PEASANTS</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>only bandits and peasants interact</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">NORMAL_INTERACTION_PATTERN</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>number of runs to reach equilibrium or stop</td>
+		<td>with values</td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">RUN_LIMIT</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>maximum population size before run stops</td>
+		<td>with values</td>
+		<td>25000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MAXIMUM_POPULATION_SIZE</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>number of consecutive periods without adjustment defines equilibrium</td>
+		<td>with values</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">EQUILIBRIUM_NUMBER_PERIODS_WITHOUT_ADJUSTMENT</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>threshold at which actors survive</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">SURVIVE_THRESHOLD</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>threshold at which actors thrive</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">THRIVE_THRESHOLD</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>bandit-peasant payoff discrepancy tolerance</td>
+		<td>with values</td>
+		<td>.01</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">PAYOFF_DISCREPANCY_TOLERANCE</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>percent of lowest surviving actors to shift roles</td>
+		<td>with values</td>
+		<td>.05, .1, .2</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">ADJUSTMENT_FACTOR_PERCENTAGE</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>initial number of peasants</td>
+		<td>with values</td>
+		<td>1000, 2000, 3000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">NUMBER_PEASANTS</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>initial number of bandits</td>
+		<td>with values</td>
+		<td>1000, 2000, 3000</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">NUMBER_BANDITS</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>maximum number of peasants a bandit will prey upon</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MAX_PEASANTS_TO_PREY_UPON</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>cost to bandit to prey on one peasant</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">COST_TO_PREY_ON_SINGLE_PEASANT</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>use matching function to limit number of peasants bandit successfully preys on</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">BANDITS_USE_MATCHING_FUNCTION</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>matching function exponent for number of bandits</td>
+		<td>with values</td>
+		<td>0.5</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MATCHING_FUNCTION_ALPHA_EXPONENT</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>matching function exponent for number of peasants</td>
+		<td>with values</td>
+		<td>0.5</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MATCHING_FUNCTION_BETA_EXPONENT</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>matching function constant multiplier</td>
+		<td>with values</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">MATCHING_FUNCTION_MU</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>gamma for contest function</td>
+		<td>with values</td>
+		<td>.5, .55, .6, .65, .7, .75, .8, .85, .9, .95, 1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">CONTEST_FUNCTION_GAMMA</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>force peasants to one of two protection proportions</td>
+		<td>with values</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_TO_HIGH_LOW</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>force peasants low protection proportion</td>
+		<td>with values</td>
+		<td>0.1</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_LOW_PROPORTION</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>force peasants high protection proportion</td>
+		<td>with values</td>
+		<td>0.7</td>
+	</tr>
+	<tr>
+		<td class="error">Static Double field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticDoubleFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_HIGH_PROPORTION</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>number peasants with low protection proportion</td>
+		<td>with values</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td class="error">Static Integer field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticIntegerFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">FORCE_PEASANT_ALLOCATION_LOW_INITIAL_PEASANTS</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>role shifting dynamic allocates new peasant with protection proportion</td>
+		<td>with values</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td class="error">Static Boolean field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticBooleanFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">NEW_PEASANT_GETS_BEST_PROTECTION_PROPORTION</td>
+	</tr>
+	<tr>
+		<td class="error">Array parameter named<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type arrayParameterNamedWithValues(Type1 arg1, Type2 arg2) { }</li><li>public Type arrayParameterNamed(Type p1, Type p2, Type p3) {}</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>random number seed</td>
+		<td>with values</td>
+		<td>1234567890123456789, -5667349224149818212, 6515921335490448286, -8788681650301948134, -4514942521186627771, 7323449491256553230, -4614269149927667521, 7562077152359325602, -126980190151879182, 3190657484983120391</td>
+	</tr>
+	<tr>
+		<td class="error">Static Long field to update is<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type staticLongFieldToUpdateIs(Type1 arg1) { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td colspan="3">RANDOM_SEED</td>
+	</tr>
+</table>
+<br/><br/>Matching functions are discussed <a href="http://en.wikipedia.org/wiki/Matching_theory_%28economics%29">here</a>.  The matching function result is then divided by the number of bandits (and capped at 1.0, if necessary) to give a percentage of the number of attempts at predation that will be successful for any individual bandit.  <br/><br/>The parameter space can either be built from the input above, or rebuilt from an existing file.  When a parameter space is rebuilt, the input values from above are ignored.  (The only way to see the input that is being used is to look in the xml file that is being used to build the file.)   <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td class="error">show<hr/> <span class="fit_label">Missing method, possibly: <ul><li>public Type getParameterSpaceSource() { }</li><li>public Type parameterSpaceSource() { }</li></ul><hr/>In:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>Parameter space source</td>
+	</tr>
+</table>
+<br/>Show the number of parameter points in the parameter space.  <i>Exercise caution here; if the number is very large, extreme execution times will result.  Consider reducing the number of values for one or more parameters to shrink the parameter space to something manageable.</i><br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td class="error">show<hr/> <span class="fit_label">Missing method, possibly: <ul><li>public Type getParameterSpaceSize() { }</li><li>public Type parameterSpaceSize() { }</li></ul><hr/>In:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+		<td>Parameter space size</td>
+	</tr>
+</table>
+<br/><br/>Show the parameters in the parameter space:<br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td class="error">Parameters<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getParameters() { }</li><li>public Type parameters() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">name<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getName() { }</li><li>public Type name() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">use role shifting dynamic<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getUseRoleShiftingDynamic() { }</li><li>public Type useRoleShiftingDynamic() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">actors who do worse shift to role of actors who do better<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getActorsWhoDoWorseShiftToRoleOfActorsWhoDoBetter() { }</li><li>public Type actorsWhoDoWorseShiftToRoleOfActorsWhoDoBetter() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">multiple bandits prey on multiple peasants<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMultipleBanditsPreyOnMultiplePeasants() { }</li><li>public Type multipleBanditsPreyOnMultiplePeasants() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">only bandits and peasants interact<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getOnlyBanditsAndPeasantsInteract() { }</li><li>public Type onlyBanditsAndPeasantsInteract() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">number of runs to reach equilibrium or stop<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getNumberOfRunsToReachEquilibriumOrStop() { }</li><li>public Type numberOfRunsToReachEquilibriumOrStop() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">maximum population size before run stops<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMaximumPopulationSizeBeforeRunStops() { }</li><li>public Type maximumPopulationSizeBeforeRunStops() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">number of consecutive periods without adjustment defines equilibrium<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getNumberOfConsecutivePeriodsWithoutAdjustmentDefinesEquilibrium() { }</li><li>public Type numberOfConsecutivePeriodsWithoutAdjustmentDefinesEquilibrium() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">threshold at which actors survive<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getThresholdAtWhichActorsSurvive() { }</li><li>public Type thresholdAtWhichActorsSurvive() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">threshold at which actors thrive<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getThresholdAtWhichActorsThrive() { }</li><li>public Type thresholdAtWhichActorsThrive() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">bandit-peasant payoff discrepancy tolerance<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getBanditMinusPeasantPayoffDiscrepancyTolerance() { }</li><li>public Type banditMinusPeasantPayoffDiscrepancyTolerance() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">percent of lowest surviving actors to shift roles<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getPercentOfLowestSurvivingActorsToShiftRoles() { }</li><li>public Type percentOfLowestSurvivingActorsToShiftRoles() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">initial number of peasants<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getInitialNumberOfPeasants() { }</li><li>public Type initialNumberOfPeasants() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">initial number of bandits<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getInitialNumberOfBandits() { }</li><li>public Type initialNumberOfBandits() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">maximum number of peasants a bandit will prey upon<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMaximumNumberOfPeasantsABanditWillPreyUpon() { }</li><li>public Type maximumNumberOfPeasantsABanditWillPreyUpon() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">cost to bandit to prey on one peasant<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getCostToBanditToPreyOnOnePeasant() { }</li><li>public Type costToBanditToPreyOnOnePeasant() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">use matching function to limit number of peasants bandit successfully preys on<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getUseMatchingFunctionToLimitNumberOfPeasantsBanditSuccessfullyPreysOn() { }</li><li>public Type useMatchingFunctionToLimitNumberOfPeasantsBanditSuccessfullyPreysOn() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">matching function exponent for number of bandits<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMatchingFunctionExponentForNumberOfBandits() { }</li><li>public Type matchingFunctionExponentForNumberOfBandits() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">matching function exponent for number of peasants<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMatchingFunctionExponentForNumberOfPeasants() { }</li><li>public Type matchingFunctionExponentForNumberOfPeasants() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">matching function constant multiplier<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getMatchingFunctionConstantMultiplier() { }</li><li>public Type matchingFunctionConstantMultiplier() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">gamma for contest function<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getGammaForContestFunction() { }</li><li>public Type gammaForContestFunction() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">force peasants to one of two protection proportions<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getForcePeasantsToOneOfTwoProtectionProportions() { }</li><li>public Type forcePeasantsToOneOfTwoProtectionProportions() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">force peasants low protection proportion<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getForcePeasantsLowProtectionProportion() { }</li><li>public Type forcePeasantsLowProtectionProportion() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">force peasants high protection proportion<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getForcePeasantsHighProtectionProportion() { }</li><li>public Type forcePeasantsHighProtectionProportion() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">number peasants with low protection proportion<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getNumberPeasantsWithLowProtectionProportion() { }</li><li>public Type numberPeasantsWithLowProtectionProportion() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">role shifting dynamic allocates new peasant with protection proportion<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getRoleShiftingDynamicAllocatesNewPeasantWithProtectionProportion() { }</li><li>public Type roleShiftingDynamicAllocatesNewPeasantWithProtectionProportion() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+	<tr>
+		<td class="error">random number seed<hr/> <span class="fit_label">Missing class or Missing method. Possibly:<ul><li>public Type getRandomNumberSeed() { }</li><li>public Type randomNumberSeed() { }</li></ul><hr/>Possibly in class:<ul><li>edu.uci.imbs.fit.SraFixture</li></ul></span></td>
+	</tr>
+</table>
+<br/>To execute the scenarios with the parameters above, remove the comment:  "|run scenarios|"<br/>It's a good idea to keep this line commented until you have changed the parameters as you want them for a particular scenario set, and tested that they are accepted, and that the size of the parameter space is reasonable. <br/><br/><table border="1" cellspacing="0">
+	<tr>
+		<td>note</td>
+		<td>run scenarios</td>
+	</tr>
+</table>
+]]></content>
+    <relativePageName>StochasticSraModelRunner</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+
