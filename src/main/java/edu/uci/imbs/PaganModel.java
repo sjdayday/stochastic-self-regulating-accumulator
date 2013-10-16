@@ -29,8 +29,9 @@ public class PaganModel implements Model {
 	private double cumulativeEvidenceForAlternativeA;
 	private double cumulativeEvidenceForAlternativeB;
 
-	public PaganModel(ParameterSource parameterSource) {
+	public PaganModel(boolean feedback, ParameterSource parameterSource) {
 		this.parameterSource = parameterSource; 
+		this.feedback = feedback; 
 	}
 
 	public void participate(Experiment experiment) {
@@ -82,7 +83,7 @@ public class PaganModel implements Model {
 		return parameterSource.getParameter(2);
 	}
 	/**
-	 * Step-size in confidence
+	 * Step-size in confidence (learning rate)
 	 * @return
 	 */
 	protected double getLambda() {

@@ -15,5 +15,22 @@ public class FixedParameterSource implements ParameterSource {
 		if ((index < 0 ) || (index >= parameters.length)) throw new IllegalArgumentException("FixedParameterSource.getParameter: argument must be from 0 to "+(parameters.length-1)+"; was "+index); 
 		return parameters[index];
 	}
-
+	@Override
+	public boolean equals(Object arg)
+	{
+		if (arg == null) return false;
+		if (this.getClass() != arg.getClass()) return false;
+		FixedParameterSource otherSource = (FixedParameterSource) arg;  
+		if (parameters.length != otherSource.parameters.length) return false; 
+		for (int i = 0; i < parameters.length; i++)
+		{
+			if (parameters[i] != otherSource.parameters[i]) return false;
+		}
+		return true; 
+	}
+	@Override
+	public int hashCode()
+	{
+		return HashCodeUtil.hash(27, parameters); 
+	}
 }

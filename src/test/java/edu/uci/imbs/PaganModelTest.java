@@ -16,24 +16,23 @@ import org.junit.Test;
 public class PaganModelTest {
 
 	private Experiment experiment;
-
+	private static final String SLASH = System.getProperty("file.separator"); 
 	@Before
 	public void setUp() throws Exception {
 		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
-		experiment.loadConfigurationData("data/exp2p1.mat");
+		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 	}
 
 	@Test
 	public void verifyModelCreated() throws Exception {
-		Model model = new PaganModel(new FixedParameterSource(new double[]{.01, .02})); 
+		Model model = new PaganModel(true, new FixedParameterSource(new double[]{.01, .02})); 
 		model.participate(experiment); 
 		assertEquals(.02, model.getParameterSource().getParameter(1), .001); 
 		assertEquals(200, model.getExperiment().getTrials().size()); 
 	}
 	@Test
 	public void verifyModelBehavior() throws Exception {
-		Model model = new PaganModel(new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
-		((PaganModel) model).setFeedback(true); 
+		Model model = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
 		model.participate(experiment); 
 		model.run(); 
 		
@@ -81,8 +80,7 @@ public class PaganModelTest {
 
 	@Test
 	public void verifyModelInitialization() throws Exception {
-		PaganModel model = new PaganModel(new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
-		model.setFeedback(true); 
+		PaganModel model = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
 		model.participate(experiment); 
 		assertEquals(3.7, model.getK(), .001); 
 		assertEquals(2.67, model.getTau(), .001); 
