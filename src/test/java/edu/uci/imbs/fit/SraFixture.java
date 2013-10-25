@@ -2,7 +2,6 @@ package edu.uci.imbs.fit;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.grayleaves.utility.Constants;
@@ -12,6 +11,7 @@ import org.grayleaves.utility.MockClock;
 import org.grayleaves.utility.MockHibernateScenarioSet;
 import org.grayleaves.utility.NameValuePair;
 import org.grayleaves.utility.NameValuePairBuilder;
+import org.grayleaves.utility.ParameterIterator;
 import org.grayleaves.utility.ParameterSpace;
 import org.grayleaves.utility.ParameterSpacePersister;
 import org.grayleaves.utility.ScenarioException;
@@ -31,13 +31,22 @@ public class SraFixture extends DoFixture
 		protectionParameterSpaceFixture = new ParameterSpaceFixture(); 
 		setSystemUnderTest(protectionParameterSpaceFixture); 
 	}
+	public String showStuff()
+	{
+		return "where "+System.getProperty("SRATARGET")+System.getProperty("SCENARIO_ROOT"); 
+	}
 	public void runScenarios() throws ScenarioException
 	{
 		scenarioSet = new MockHibernateScenarioSet<String, DummyInput>(false);		
 		scenarioSet.setName("SRA"); // perhaps a different name  
-		scenarioSet.setModel(new SraModel<String>());
+		SraModel<String> model = new SraModel<String>();
+		scenarioSet.setModel(model);
 		scenarioSet.setInput(new DummyInput());
-		scenarioSet.setParameterSpace(protectionParameterSpaceFixture.getParameterSpace()); 
+		ParameterSpace space = protectionParameterSpaceFixture.getParameterSpace(); 
+		ParameterIterator iterator = space.iterator(); 
+		iterator.setFitnessTracker(model); 
+		
+		scenarioSet.setParameterSpace(space); 
 		scenarioSet.setCalendar(MockClock.getCalendar());
 		scenarioSet.setId(buildMockId());
 		buildSummaryHeader(scenarioSet);

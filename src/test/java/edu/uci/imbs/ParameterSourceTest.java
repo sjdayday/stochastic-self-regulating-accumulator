@@ -38,6 +38,24 @@ public class ParameterSourceTest {
 		FixedParameterSource sourceDifferent = new FixedParameterSource(new double[]{0.1, 0.2, 0.2}); 
 		assertFalse(source.hashCode() == sourceDifferent.hashCode()); 
 	}
+	@Test
+	public void verifyCompareTo() throws Exception
+	{
+		FixedParameterSource source2 = new FixedParameterSource(new double[]{0.1, 0.2, 0.3}); 
+		assertEquals(0, source.compareTo(source2)); 
+		FixedParameterSource sourceLarger = new FixedParameterSource(new double[]{0.1, 0.2, 0.2}); 
+		assertEquals(1, source.compareTo(sourceLarger)); 
+		FixedParameterSource sourceSmaller = new FixedParameterSource(new double[]{0.1, 0.2, 0.4}); 
+		assertEquals(-1, source.compareTo(sourceSmaller)); 
+	}
+	@Test(expected=NullPointerException.class)
+	public void verifyThrowsIfComparedToNull() throws Exception {
+		source.compareTo(null); 
+	}
+	@Test(expected=ClassCastException.class)
+	public void verifyThrowsIfComparedToOtherThanFixedParameterSource() throws Exception {
+		source.compareTo(""); 
+	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfNonexistentParameterRequested() throws Exception {
 		source.getParameter(3); 

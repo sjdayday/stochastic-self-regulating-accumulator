@@ -72,6 +72,41 @@ public class TrialTest {
 		assertEquals(0,trial.getResponseForCue(Alternative.B, 2)); 
 	}
 	@Test
+	public void verifyIdentifiesFirstDiscriminatingCue() throws Exception
+	{
+		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.A_POSITIVE,
+				Trial.B_POSITIVE,
+				Trial.A_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.B_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.B_POSITIVE); 
+		assertEquals(2, trial.firstDiscriminatingCue()); 
+		trial.setCueProfile(Trial.B_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.A_POSITIVE,
+				Trial.B_POSITIVE,
+				Trial.A_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.B_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.B_POSITIVE); 
+		assertEquals(0, trial.firstDiscriminatingCue()); 
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.BOTH_POSITIVE); 
+		assertEquals(8, trial.firstDiscriminatingCue()); 
+	}
+	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
 		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCorrectAlternative(Alternative.A); 

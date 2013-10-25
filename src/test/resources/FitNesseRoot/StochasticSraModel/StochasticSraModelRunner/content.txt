@@ -2,7 +2,9 @@
 
 |sra parameter space|
 
-We begin by defining the protection parameter space.
+|note|show|show stuff|
+
+We begin by defining the pagan model parameter space.
 
 To comment any line, precede it with "|note".
 
@@ -10,7 +12,7 @@ Uncomment the following line to rebuild a parameter space from an existing file 
 
 |note|Rebuild parameter space from file|/Users/stevedoubleday/Downloads/Fitnesse-Apr2011/ScenarioSet_19/parameterSpaceScenario_19_classnames_changed.xml|
 
-|Build parameter space named|Verify single point|
+|Build parameter space named|broad grid, 1 level deep, 6 best points, shrink factor 10|
 |Current class is|edu.uci.imbs.PaganParameterSource|
 |Array parameter named|K|with values|0.5, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0|
 |Static Double field to update is|K|
@@ -20,6 +22,25 @@ Uncomment the following line to rebuild a parameter space from an existing file 
 |Static Double field to update is|KAPPA|
 |Array parameter named|Lambda|with values|0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.3|
 |Static Double field to update is|LAMBDA|
+|Current class is|edu.uci.imbs.ScoreKeeper|
+|Array parameter named|Size of best points list|with values|6|
+|Static Integer field to update is|BEST_SCORE_POINTS_SIZE|
+
+
+
+|note|Array parameter named|K|with values|3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5|
+|note|Static Double field to update is|K|
+|note|Array parameter named|Tau|with values|2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5|
+|note|Static Double field to update is|TAU|
+|note|Array parameter named|Kappa|with values|0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5|
+|note|Static Double field to update is|KAPPA|
+|note|Array parameter named|Lambda|with values|0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4|
+|note|Static Double field to update is|LAMBDA|
+
+
+
+
+
 
 |note|Array parameter named|K|with values|3.7|
 |note|Array parameter named|Tau|with values|2.67|
@@ -42,6 +63,11 @@ Show the parameters in the parameter space:
 |Tau|
 |Kappa|
 |Lambda|
+|Size of best points list|
+
+Uncomment the next statement to use an iterated grid search of the parameter space.  If commented, the parameter space will be traversed once for each of its parameter points. 
+
+|Iterate parameter space using grid at depth level|1|with number of points around original point|10|
 
 To execute the scenarios with the parameters above, remove the comment:  "|run scenarios|"
 It's a good idea to keep this line commented until you have changed the parameters as you want them for a particular scenario set, and tested that they are accepted, and that the size of the parameter space is reasonable. 

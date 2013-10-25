@@ -27,7 +27,7 @@ public class SraModelTest
 		model = new SraModel<String>(); 
 		Result<String> result = model.run(); 
 		assertEquals(200, result.getList().size());
-		assertEquals("0\t3\n", result.getList().get(0)); 
-		assertEquals("Score=463.0", result.getSummaryData()); 
+		assertEquals("0\t3\t0.14285714285714285\t5.599264031476239E-15", result.getList().get(0)); 
+		assertEquals("Score=168.0", result.getSummaryData()); 
 	}
 }

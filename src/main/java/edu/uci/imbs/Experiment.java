@@ -70,6 +70,10 @@ public class Experiment {
 //			dataLoaded = true; 
 //		}
 	}
+	public void loadConfigurationDataFromClassloader(String string)
+	{
+		reader = new MatFileReader(); 
+	}
 	public double[][] getSubjectData()
 	{
 		return subjectData;
@@ -124,4 +128,5 @@ public class Experiment {
 	public Double[] getCueValidities() {
 		return cueValidities;
 	}
+
 }

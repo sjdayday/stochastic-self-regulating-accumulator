@@ -115,4 +115,14 @@ public class Trial {
 		Boolean[] cue = cueProfile[requestedCue];  
 		return (cue[alternative.arrayPosition()]) ? 1 : 0;
 	}
+	public int firstDiscriminatingCue()
+	{
+		int cue = 0;
+		for (; cue < cueProfile.length; cue++)
+		{
+			if (cueProfile[cue][0] != cueProfile[cue][1]) break;
+		}
+		if (cue == cueProfile.length) cue--; 
+		return cue;
+	}
 }

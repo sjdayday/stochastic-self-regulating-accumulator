@@ -2,9 +2,10 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ public class ExperimentTest {
 	{
 		assertEquals(0, experiment.getTrials().size()); 
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
+//		experiment.loadConfigurationDataFromClassloader("exp2p1.mat");
 		assertEquals(200, experiment.getTrials().size()); 
 		experiment.getTrials().clear();
 		assertEquals(0, experiment.getTrials().size()); 
@@ -56,6 +58,41 @@ public class ExperimentTest {
 		checkData(197, Alternative.A, 6); 
 		checkData(198, Alternative.A, 9); 
 		checkData(199, Alternative.B, 9); 
+	}
+//	@Test
+	public void buildSmoothedDataFile() throws Exception
+	{
+		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
+		data = experiment.getSubjectData(); 
+		for (int i = 0; i < data.length; i++)
+		{
+			
+		}
+		PaganModel paganModel = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
+		double[] inputSearchProportions = new double[200];
+		TrialResult result = null;
+		for (int i = 0; i < data.length; i++)
+		{
+			result = new TrialResult();
+			result.searchDepth = (int) data[i][1];
+			paganModel.calculateSearchProportion(experiment.getTrials().get(i), result);
+			inputSearchProportions[i] = result.searchProportion; 
+		}
+		PaganFilter filter = new PaganFilter(50, .05); 
+		double[] smoothedSearchProportions = filter.filter(inputSearchProportions); 
+		FileWriter writer = new FileWriter("smoothedData.txt");
+		StringBuffer sb = null; 
+		for (int i = 0; i < smoothedSearchProportions.length; i++)
+		{
+//			System.out.println(i+" "+data[i][0]+" "+data[i][1]+"  "+inputSearchProportions[i]+"  "+smoothedSearchProportions[i]);
+			sb = new StringBuffer(); 
+			sb.append(inputSearchProportions[i]); 
+			sb.append("\t");
+			sb.append(smoothedSearchProportions[i]); 
+			sb.append("\n");
+			writer.write(sb.toString());
+		}
+		writer.close(); 
 	}
 	private void checkData(int trial, Alternative alternative, int cue)
 	{

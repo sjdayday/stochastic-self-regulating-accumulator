@@ -7,6 +7,8 @@ public class TrialResult {
 	public int searchDepth; 
 	public double k_l_store; 
 	public double k_r_store;
+	public double searchProportion;
+	public double smoothedSearchProportion;
 	
 	@Override
 	public String toString()
@@ -15,7 +17,10 @@ public class TrialResult {
 		sb.append(choice);
 		sb.append('\t');
 		sb.append(searchDepth);
-		sb.append('\n');
+		sb.append('\t');
+		sb.append(searchProportion);
+		sb.append('\t');
+		sb.append(smoothedSearchProportion);
 		
 		return sb.toString();
 	}

@@ -16,11 +16,13 @@ import org.junit.Test;
 public class PaganModelTest {
 
 	private Experiment experiment;
-	private static final String SLASH = System.getProperty("file.separator"); 
+	private static final String SLASH = System.getProperty("file.separator");
+	private PaganModel paganModel; 
 	@Before
 	public void setUp() throws Exception {
 		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
+		paganModel = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
 	}
 
 	@Test
@@ -80,17 +82,67 @@ public class PaganModelTest {
 
 	@Test
 	public void verifyModelInitialization() throws Exception {
-		PaganModel model = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
-		model.participate(experiment); 
-		assertEquals(3.7, model.getK(), .001); 
-		assertEquals(2.67, model.getTau(), .001); 
-		assertEquals(1.55, model.getKappa(), .001); 
-		assertEquals(0.28, model.getLambda(), .001); 
-		assertEquals(200, model.numberTrials); 
-		assertEquals(9, model.numberCues); 
-		assertTrue(model.getFeedback());
+		paganModel.participate(experiment); 
+		assertEquals(3.7, paganModel.getK(), .001); 
+		assertEquals(2.67, paganModel.getTau(), .001); 
+		assertEquals(1.55, paganModel.getKappa(), .001); 
+		assertEquals(0.28, paganModel.getLambda(), .001); 
+		assertEquals(200, paganModel.numberTrials); 
+		assertEquals(9, paganModel.numberCues); 
+		assertTrue(paganModel.getFeedback());
 //		System.out.println("ULP from 1: "+Math.ulp(1.0));
 //		System.out.println("ULP from 100: "+Math.ulp(100.0));
 //		System.out.println("ULP from -100: "+Math.ulp(-100.0));
+	}
+	@Test
+	public void verifySearchProportionCalulatedForCueChosenOneIndexed() throws Exception
+	{
+		TrialResult result = new TrialResult(); 
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.A_POSITIVE,
+				Trial.B_POSITIVE,
+				Trial.A_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.B_POSITIVE,
+				Trial.BOTH_POSITIVE,
+				Trial.B_POSITIVE); 
+		result.searchDepth = 3;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(0, result.searchProportion, .001);
+		result.searchDepth = 4;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(.166, result.searchProportion, .001);
+		result.searchDepth = 5;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(.333, result.searchProportion, .001);
+		result.searchDepth = 6;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(.5, result.searchProportion, .001);
+		result.searchDepth = 7;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(.666, result.searchProportion, .001);
+		result.searchDepth = 8;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(.833, result.searchProportion, .001);
+	}
+	@Test
+	public void verifySearchProportionCalculatedWhenFirstDiscriminatingCueIsLastCue() throws Exception
+	{
+		TrialResult result = new TrialResult(); 
+		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial.setCueProfile(Trial.BOTH_POSITIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.BOTH_NEGATIVE,
+				Trial.B_POSITIVE); 
+		result.searchDepth = 9;
+		paganModel.calculateSearchProportion(trial, result);
+		assertEquals(0, result.searchProportion, .001);
 	}
 }
