@@ -65,6 +65,7 @@ public class SraModel<R> extends PersistentModel<R> implements FitnessTracker
 	}
 	protected List<TrialResult> runPaganModel()
 	{
+		// put in loop governed by Parameter.  each loop, we ask experiment to build fresh trials, and tsk accumulates results
 		paganParameterSource = new PaganParameterSource(); 
 		paganModel = new PaganModel(true, paganParameterSource); 
 		paganModel.participate(experiment); 

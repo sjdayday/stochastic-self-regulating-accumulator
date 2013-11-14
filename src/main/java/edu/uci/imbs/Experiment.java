@@ -43,11 +43,11 @@ public class Experiment {
 	private List<Trial> trials;
 	private double[][] subjectData;
 	private boolean dataLoaded;
+	private double[][] truth;
+	private double[][] answers;
 
 	public Experiment(Double[] cueValidities) {
 		this.cueValidities = cueValidities; 
-		trials = new ArrayList<Trial>(); 
-		
 		dataLoaded = false; 
 	}
 
@@ -62,13 +62,6 @@ public class Experiment {
 	}
 	public void loadConfigurationData(String filename) throws IOException {
 		loadConfigurationData(new File(filename)); 
-//		if (!dataLoaded)
-//		{
-//			reader = new MatFileReader(new File(filename)); 
-//			contents = reader.getContent(); 
-//			buildTrials();
-//			dataLoaded = true; 
-//		}
 	}
 	public void loadConfigurationDataFromClassloader(String string)
 	{
@@ -80,14 +73,29 @@ public class Experiment {
 	}
 
 	private void buildTrials() {
-		double[][] truth = getDoubleArray(TRUTH);  
-		double[][] answers = getDoubleArray(ANSWERS);  
+		truth = getDoubleArray(TRUTH);  
+		answers = getDoubleArray(ANSWERS);  
 		subjectData = getDoubleArray(DATA);  
-		buildTrialsWithCorrectAlternatives(truth);
-		updateTrialsWithCueProfiles(answers);
+		buildFreshTrials(); 
+	}
+	public void buildFreshTrials()
+	{
+		trials = new ArrayList<Trial>(); 
+		buildTrialsWithCorrectAlternatives();
+		updateTrialsWithCueProfiles();
 	}
 
-	private void updateTrialsWithCueProfiles(double[][] answers) {
+	private void buildTrialsWithCorrectAlternatives() {
+		Trial trial = null; 
+		
+//		builder = new ValidityBuilder(cueValidities); 
+		for (int i = 0; i < truth.length; i++) {
+			trial = new Trial(cueValidities); 
+			trial.setCorrectAlternative(convertTruthToAlternative(truth[i][0])); 
+			trials.add(trial);
+		}
+	}
+	private void updateTrialsWithCueProfiles() {
 		Boolean[][] cueProfiles = null; 
 		for (int i = 0; i < trials.size(); i++) {
 			int index = i*2; 
@@ -103,14 +111,6 @@ public class Experiment {
 	}
 	private Boolean convertDoubleToBoolean(double answer) {
 		return (answer == 1d) ? true : false;
-	}
-	private void buildTrialsWithCorrectAlternatives(double[][] truth) {
-		Trial trial = null; 
-		for (int i = 0; i < truth.length; i++) {
-			trial = new Trial(cueValidities); 
-			trial.setCorrectAlternative(convertTruthToAlternative(truth[i][0])); 
-			trials.add(trial);
-		}
 	}
 	private Alternative convertTruthToAlternative(double truth) {
 		return (truth == 1d) ? Alternative.A : Alternative.B;
@@ -128,5 +128,6 @@ public class Experiment {
 	public Double[] getCueValidities() {
 		return cueValidities;
 	}
+
 
 }

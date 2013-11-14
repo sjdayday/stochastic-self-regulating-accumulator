@@ -125,4 +125,8 @@ public class Trial {
 		if (cue == cueProfile.length) cue--; 
 		return cue;
 	}
+	protected Double[] getCueValidities()
+	{
+		return cueValidities;
+	}
 }

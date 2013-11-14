@@ -2,10 +2,9 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,13 +22,13 @@ public class ExperimentTest {
 	@Before
 	public void setUp() throws Exception {
 		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		SraParameters.resetForTesting(); 
+		SraParameters.STOCHASTIC = false; 
+		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 	}
 	@Test
 	public void verifyDataLoadedOnlyOnceAtInitialization() throws Exception
 	{
-		assertEquals(0, experiment.getTrials().size()); 
-		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
-//		experiment.loadConfigurationDataFromClassloader("exp2p1.mat");
 		assertEquals(200, experiment.getTrials().size()); 
 		experiment.getTrials().clear();
 		assertEquals(0, experiment.getTrials().size()); 
@@ -39,7 +38,6 @@ public class ExperimentTest {
 	}
 	@Test
 	public void verifyArraysCorrectlyReadFromMatlabFile() throws Exception {
-		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		Map<String, MLArray> contents = experiment.getMatlabFileContents(); 
 		matlabArray = contents.get("truth"); 
 		assertEquals(200, matlabArray.getM()); 
@@ -48,7 +46,6 @@ public class ExperimentTest {
 	@Test
 	public void verifyDataForOneSubjectReadCorrectly() throws Exception
 	{
-		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		data = experiment.getSubjectData(); 
 		assertEquals(200, data.length); 
 		checkData(0, Alternative.B, 4); 
@@ -59,15 +56,9 @@ public class ExperimentTest {
 		checkData(198, Alternative.A, 9); 
 		checkData(199, Alternative.B, 9); 
 	}
-//	@Test
 	public void buildSmoothedDataFile() throws Exception
 	{
-		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		data = experiment.getSubjectData(); 
-		for (int i = 0; i < data.length; i++)
-		{
-			
-		}
 		PaganModel paganModel = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
 		double[] inputSearchProportions = new double[200];
 		TrialResult result = null;
@@ -106,7 +97,6 @@ public class ExperimentTest {
 	}
 	@Test
 	public void verifyTrialsBuilt() throws Exception {
-		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		List<Trial> trials = experiment.getTrials(); 
 		assertEquals(200, trials.size()); 
 		checkOneTrial(trials.get(0), Alternative.B, new Boolean[][]{Trial.BOTH_NEGATIVE, Trial.B_POSITIVE, Trial.B_POSITIVE, Trial.B_POSITIVE,
@@ -115,6 +105,27 @@ public class ExperimentTest {
 			Trial.BOTH_NEGATIVE, Trial.BOTH_NEGATIVE, Trial.BOTH_NEGATIVE, Trial.A_POSITIVE, Trial.BOTH_NEGATIVE}); 
 		checkOneTrial(trials.get(199), Alternative.B, new Boolean[][]{Trial.BOTH_NEGATIVE, Trial.BOTH_NEGATIVE, Trial.BOTH_NEGATIVE, Trial.BOTH_POSITIVE,
 			Trial.BOTH_NEGATIVE, Trial.BOTH_NEGATIVE, Trial.BOTH_POSITIVE, Trial.B_POSITIVE, Trial.BOTH_NEGATIVE}); 
+	}
+	@Test
+	public void verifyFreshTrialsBuilt() throws Exception
+	{
+		List<Trial> trials = experiment.getTrials(); 
+		assertEquals(200, trials.size()); 
+		Trial firstTrial = trials.get(0); 
+		assertEquals(firstTrial, experiment.getTrials().get(0)); 
+		experiment.buildFreshTrials(); 
+		assertNotEquals(firstTrial, experiment.getTrials().get(0)); 
+	}
+	@Test
+	public void verifyValidityBuilderLoadsStochasticOrFixedValiditiesToTrials() throws Exception
+	{
+		Trial trial = experiment.getTrials().get(0); 
+		assertEquals("fixed validity",.99, trial.getCueValidities()[0], .0001); 
+		SraParameters.STOCHASTIC = true;
+		experiment.buildFreshTrials(); 
+		trial = experiment.getTrials().get(0); 
+//		assertEquals("stochastic validity",.98, trial.getCueValidities()[0], .0001); 
+		
 	}
 	private void checkOneTrial(Trial trial, Alternative alternative, Boolean[][] cueProfiles) {
 		assertEquals(alternative, trial.getCorrectAlternative()); 
