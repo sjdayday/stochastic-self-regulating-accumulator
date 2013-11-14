@@ -24,7 +24,7 @@ public class ScoreKeeperTest
 	@Before
 	public void setUp() throws Exception
 	{
-		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		subjectData = experiment.getSubjectData(); 
 		scoreKeeper = new ScoreKeeper(subjectData, 1); 

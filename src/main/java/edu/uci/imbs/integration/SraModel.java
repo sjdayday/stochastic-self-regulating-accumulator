@@ -35,7 +35,7 @@ public class SraModel<R> extends PersistentModel<R> implements FitnessTracker
 	}
 	private void build()
 	{
-		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		try
 		{
 			//FIXME 

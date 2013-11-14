@@ -20,7 +20,7 @@ public class PaganModelTest {
 	private PaganModel paganModel; 
 	@Before
 	public void setUp() throws Exception {
-		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		paganModel = new PaganModel(true, new FixedParameterSource(new double[]{3.7, 2.67, 1.55, 0.28})); 
 	}
@@ -98,7 +98,7 @@ public class PaganModelTest {
 	public void verifySearchProportionCalulatedForCueChosenOneIndexed() throws Exception
 	{
 		TrialResult result = new TrialResult(); 
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		Trial trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_NEGATIVE,
 				Trial.A_POSITIVE,
@@ -131,7 +131,7 @@ public class PaganModelTest {
 	public void verifySearchProportionCalculatedWhenFirstDiscriminatingCueIsLastCue() throws Exception
 	{
 		TrialResult result = new TrialResult(); 
-		Trial trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		Trial trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_NEGATIVE,
 				Trial.BOTH_NEGATIVE,

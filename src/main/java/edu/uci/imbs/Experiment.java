@@ -39,14 +39,14 @@ public class Experiment {
 	private static final String DATA = "data";
 	private MatFileReader reader;
 	private Map<String, MLArray> contents;
-	private Double[] cueValidities;
+	private double[] cueValidities;
 	private List<Trial> trials;
 	private double[][] subjectData;
 	private boolean dataLoaded;
 	private double[][] truth;
 	private double[][] answers;
 
-	public Experiment(Double[] cueValidities) {
+	public Experiment(double[] cueValidities) {
 		this.cueValidities = cueValidities; 
 		dataLoaded = false; 
 	}
@@ -87,10 +87,9 @@ public class Experiment {
 
 	private void buildTrialsWithCorrectAlternatives() {
 		Trial trial = null; 
-		
-//		builder = new ValidityBuilder(cueValidities); 
+		ValidityBuilder builder = new ValidityBuilder(cueValidities); 
 		for (int i = 0; i < truth.length; i++) {
-			trial = new Trial(cueValidities); 
+			trial = new Trial(builder.getCueValidities()); 
 			trial.setCorrectAlternative(convertTruthToAlternative(truth[i][0])); 
 			trials.add(trial);
 		}
@@ -125,7 +124,7 @@ public class Experiment {
 	public List<Trial> getTrials() {
 		return trials;
 	}
-	public Double[] getCueValidities() {
+	public double[] getCueValidities() {
 		return cueValidities;
 	}
 

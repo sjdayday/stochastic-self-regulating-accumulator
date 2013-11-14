@@ -21,7 +21,7 @@ public class ExperimentTest {
 	private static final String SLASH = System.getProperty("file.separator"); 
 	@Before
 	public void setUp() throws Exception {
-		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		SraParameters.resetForTesting(); 
 		SraParameters.STOCHASTIC = false; 
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
@@ -92,7 +92,7 @@ public class ExperimentTest {
 	}
 	@Test
 	public void verifyCueValiditiesSetAtInitiation() throws Exception {
-		experiment = new Experiment(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		assertEquals(9, experiment.getCueValidities().length); 
 	}
 	@Test
@@ -124,8 +124,7 @@ public class ExperimentTest {
 		SraParameters.STOCHASTIC = true;
 		experiment.buildFreshTrials(); 
 		trial = experiment.getTrials().get(0); 
-//		assertEquals("stochastic validity",.98, trial.getCueValidities()[0], .0001); 
-		
+		assertEquals("stochastic validity",.969965, trial.getCueValidities()[0], .000001); 
 	}
 	private void checkOneTrial(Trial trial, Alternative alternative, Boolean[][] cueProfiles) {
 		assertEquals(alternative, trial.getCorrectAlternative()); 

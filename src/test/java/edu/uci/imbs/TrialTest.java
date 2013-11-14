@@ -12,7 +12,7 @@ public class TrialTest {
 
 	@Test
 	public void verifyLogOddsCalculatedForCueValidities() {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		assertEquals(4.59511985013459, trial.logOddsForCue(0), .00000000000001); 
 		assertEquals(2.31363492918063, trial.logOddsForCue(1), .00000000000001); 
 		assertEquals(1.90095876119305, trial.logOddsForCue(2), .00000000000001); 
@@ -25,7 +25,7 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCueProfilesLoadedCorrectly() throws Exception {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.A_POSITIVE,
@@ -56,7 +56,7 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCorrectResponseForAlternativeForCue() throws Exception {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_POSITIVE,
 				Trial.A_POSITIVE,
@@ -74,7 +74,7 @@ public class TrialTest {
 	@Test
 	public void verifyIdentifiesFirstDiscriminatingCue() throws Exception
 	{
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.BOTH_NEGATIVE,
 				Trial.A_POSITIVE,
@@ -108,7 +108,7 @@ public class TrialTest {
 	}
 	@Test
 	public void verifyCorrectAlternativeIsIdentified() throws Exception {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCorrectAlternative(Alternative.A); 
 		assertEquals(Alternative.A, trial.getCorrectAlternative()); 
 	}
@@ -118,21 +118,21 @@ public class TrialTest {
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfCueValiditiesEmpty() throws Exception {
-		trial = new Trial(new Double[]{});
+		trial = new Trial(new double[]{});
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyNumberOfCueProfilesMatchesNumberOfCueValidities() throws Exception {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.setCueProfile(Trial.BOTH_POSITIVE); 
 	}
 	@Test(expected=IllegalStateException.class)
 	public void verifyThrowsIfCorrectAlternativeNotSet() throws Exception {
-		trial = new Trial(new Double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		trial = new Trial(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		trial.getCorrectAlternative().toString(); 
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void verifyThrowsIfResponseOutOfRangeForAlternativeForCue() throws Exception {
-		trial = new Trial(new Double[]{.99, .91});
+		trial = new Trial(new double[]{.99, .91});
 		trial.setCueProfile(Trial.BOTH_POSITIVE,
 				Trial.B_POSITIVE); 
 		trial.getResponseForCue(Alternative.A, 2);		
