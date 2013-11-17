@@ -33,7 +33,6 @@ public class MaximumLikelihoodScoreKeeperTest
 		parameterPoint = new TestingParameterPoint(1); 
 		SraParameters.resetForTesting(); 
 		SraParameters.TRAINING_TRIALS = 3; 
-//		SraParameters.STOCHASTIC_RUNS_PER_PARAMETER_POINT = 5; 
 	}
 	@Test
 	public void verifyMultipleRunsAccumulatedForAllTrials() throws Exception
@@ -51,13 +50,18 @@ public class MaximumLikelihoodScoreKeeperTest
 	public void verifyScoresLogLikelihoodAsLogOfProductOfAllTrialProportionsMatched() throws Exception
 	{
 		scoreKeeper = new TestingMaximumLikelihoodScoreKeeper(subjectData, 1); 
-		List<TrialResult> results = new ArrayList<TrialResult>();  
-		results.add(buildResult(.5)); 
-		results.add(buildResult(.4)); 
-		results.add(buildResult(.3)); 
+		List<TrialResult> results = buildResultListWithProportionMatched(.5, .4, .3); 
 		scoreKeeper.score(results, null, parameterPoint); 
 		point = scoreKeeper.getCurrentPoint(); 
 		assertEquals(-2.8134107, point.score, .0000001);
+	}
+	protected List<TrialResult> buildResultListWithProportionMatched(double d, double e, double f)
+	{
+		List<TrialResult> results = new ArrayList<TrialResult>();  
+		results.add(buildResult(d)); 
+		results.add(buildResult(e)); 
+		results.add(buildResult(f));
+		return results;
 	}
 	private TrialResult buildResult(double proportionMatched)
 	{
@@ -70,13 +74,13 @@ public class MaximumLikelihoodScoreKeeperTest
 	{
 		subjectData = buildSubjectData(); 
 		scoreKeeper = new MaximumLikelihoodScoreKeeper(subjectData, 1); 
-		List<TrialResult> results = buildResultList(1, 2, 1, 3, 0, 4);
+		List<TrialResult> results = buildResultListWithCuesAndSearchDepths(1, 2, 1, 3, 0, 4);
 		scoreKeeper.scoreOnePaganModelRun(results); 
 		checkProportions(1d, 0d, 0d); 
-		results = buildResultList(1, 2, 0, 3, 0, 4);
+		results = buildResultListWithCuesAndSearchDepths(1, 2, 0, 3, 0, 4);
 		scoreKeeper.scoreOnePaganModelRun(results); 
 		checkProportions(1d, .5d, 0d); 
-		results = buildResultList(1, 2, 0, 3, 1, 4);
+		results = buildResultListWithCuesAndSearchDepths(1, 2, 0, 3, 1, 4);
 		scoreKeeper.scoreOnePaganModelRun(results); 
 		checkProportions(1d, .666d, .333d); 
 		List<TrialResult> finalResults = scoreKeeper.getConsolidatedTrialResults(); 
@@ -84,11 +88,35 @@ public class MaximumLikelihoodScoreKeeperTest
 		checkResult(finalResults, 1, .666d, 0, 3); 
 		checkResult(finalResults, 2, .333d, 0, 4); 
 	}
-	private void checkResult(List<TrialResult> finalResults, int i, double d, int j, int k)
+	
+	@Test
+	public void verifyTracksHighestScoreAndBestScoresAcrossMultipleResults() throws Exception
 	{
-		assertEquals(d, finalResults.get(i).proportionMatched, .001);
-		assertEquals(j, finalResults.get(i).choice);
-		assertEquals(k, finalResults.get(i).searchDepth);
+		subjectData = buildSubjectData(); 
+		scoreKeeper = new TestingMaximumLikelihoodScoreKeeper(subjectData, 1); 
+		results = buildResultListWithProportionMatched(.5, .4, .3); 
+		scoreKeeper.score(results, null, parameterPoint); 
+		bestPoint = scoreKeeper.getBestPoint(); 
+		assertEquals(-2.8134107, bestPoint.score, .0000001);
+		results = buildResultListWithProportionMatched(.5, .4, .1); 
+		scoreKeeper.score(results, null, parameterPoint); 
+		bestPoint = scoreKeeper.getBestPoint(); 
+		assertEquals("point score is -3.9120230, but not best", 
+				-2.8134107, bestPoint.score, .0000001);
+		results = buildResultListWithProportionMatched(.5, .4, .4); 
+		scoreKeeper.score(results, null, parameterPoint); 
+		bestPoint = scoreKeeper.getBestPoint(); 
+		assertEquals(-2.5257286, bestPoint.score, .0000001);
+		assertEquals(3, scoreKeeper.getBestScorePoints().size()); 
+		assertEquals(-2.5257286, scoreKeeper.getBestScorePoints().get(0).score, .0000001); 
+		assertEquals(-2.8134107, scoreKeeper.getBestScorePoints().get(1).score, .0000001); 
+		assertEquals(-3.9120230, scoreKeeper.getBestScorePoints().get(2).score, .0000001); 
+	}
+	private void checkResult(List<TrialResult> finalResults, int i, double proportionMatched, int choice, int searchDepth)
+	{
+		assertEquals(proportionMatched, finalResults.get(i).proportionMatched, .001);
+		assertEquals(choice, finalResults.get(i).choice);
+		assertEquals(searchDepth, finalResults.get(i).searchDepth);
 	}
 	private void checkProportions(double d, double e, double f)
 	{
@@ -96,7 +124,7 @@ public class MaximumLikelihoodScoreKeeperTest
 		assertEquals(e, scoreKeeper.getTrialScoreKeepers().get(1).proportionMatched, .001); 
 		assertEquals(f, scoreKeeper.getTrialScoreKeepers().get(2).proportionMatched, .001); 
 	}
-	private List<TrialResult> buildResultList(int i, int j, int k, int l,
+	private List<TrialResult> buildResultListWithCuesAndSearchDepths(int i, int j, int k, int l,
 			int m, int n)
 	{
 		List<TrialResult> results = new ArrayList<TrialResult>(); 
@@ -115,133 +143,9 @@ public class MaximumLikelihoodScoreKeeperTest
 	private double[][] buildSubjectData()
 	{
 		double[][] test = new double[][]{new double[]{1d, 2d}, new double[]{0d, 3d}, new double[]{1d, 4d}};
-//		for (int i = 0; i < 3; i++)
-//		{
-//				System.out.println(test[i][0]+" "+test[i][1]);
-//		}
 		return test;
-//		subjectDataAlternative = subjectData[i][0]; 
-//		subjectDataCue = subjectData[i][1]; 
 
 	}
-	@Test
-	public void verifyPrintsSummaryOfTrialResultCounts() throws Exception
-	{
-//		buildAndScoreTrialResult(0, 2); 
-//		buildAndScoreTrialResult(1, 3); 
-//		buildAndScoreTrialResult(0, 1); 
-//		buildAndScoreTrialResult(1, 3); 
-//		buildAndScoreTrialResult(0, 2); 
-//		assertEquals(
-//				"Result: 0\t2\t0.0\t0.0\t0.0 Count: 2\n" +
-//				"Result: 0\t1\t0.0\t0.0\t0.0 Count: 1\n" +
-//				"Result: 1\t3\t0.0\t0.0\t0.0 Count: 2\n" +
-//				"Best Result: 0\t2\t0.0\t0.0\t0.4 Count: 2", 
-//				tsk.printSummary()); 
-	}
-//	protected void checkProportion(String comment, double proportionMatched)
-//	{
-//		assertEquals(comment, proportionMatched, newResult.proportionMatched, .001);
-//	}
-//	protected void checkResultFields(String comment, int choice, int cue, int count)
-//	{
-//		assertEquals(comment, choice, newResult.choice); 
-//		assertEquals(comment, cue, newResult.searchDepth); 
-//		assertEquals(count, (int) tsk.getCountsMap().get(newResult)); 
-//	}
-//	protected void buildAndScoreAndGetBestTrialResult(int choice, int cue)
-//	{
-//		buildAndScoreTrialResult(choice, cue); 
-//		newResult = tsk.getBestResult(); 
-//		
-//	}
-//	@Test
-	public void verifyModelWithBaselineParametersScoresCorrectlyAgainstFirst100CasesOfSubjectData() throws Exception
-	{
-		List<TrialResult> results = runModel(PAGAN_PARAMETER_SOURCE); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(168, point.score, .001);
-		assertEquals(new PaganParameterSource(new double[]{3.7, 2.67, 1.55, 0.28}), 
-				scoreKeeper.getCurrentParameterSource()); 
-		assertFalse("different point won't match",(new PaganParameterSource(new double[]{3.6, 2.67, 1.55, 0.28})).equals( 
-				scoreKeeper.getCurrentParameterSource())); 
-	}
-//	@Test
-	public void verifyResultsCollectedInCurrentPoint() throws Exception
-	{
-		List<TrialResult> results = runModel(PAGAN_PARAMETER_SOURCE); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(168, point.score, .001);
-		assertEquals(PAGAN_PARAMETER_SOURCE, point.parameterSource);
-	}
-//	@Test
-	public void verifyTracksPointsInDescendingOrderUpToConfigurableLimit() throws Exception
-	{
-		SraParameters.BEST_SCORE_POINTS_SIZE = 3; 
-		assertEquals(0, scoreKeeper.getBestScorePoints().size());
-		runAndScorePoint(new double[]{2.0, 2.67, 1.55, 0.28}, 270); 
-		assertEquals(1, scoreKeeper.getBestScorePoints().size());
-		runAndScorePoint(new double[]{3.7, 2.67, 1.55, 0.28}, 168); 
-		assertEquals(2, scoreKeeper.getBestScorePoints().size());
-		assertEquals(168, scoreKeeper.getBestScorePoints().get(0).score, .001);
-		assertEquals(270, scoreKeeper.getBestScorePoints().get(1).score, .001);
-		runAndScorePoint(new double[]{2.5, 2.67, 1.55, 0.28}, 243); 
-		assertEquals(3, scoreKeeper.getBestScorePoints().size());
-		runAndScorePoint(new double[]{4.0, 2.67, 1.55, 0.28}, 237); 
-		assertEquals(3, scoreKeeper.getBestScorePoints().size());
-		assertEquals(168, scoreKeeper.getBestScorePoints().get(0).score, .001);
-		assertEquals(237, scoreKeeper.getBestScorePoints().get(1).score, .001);
-		assertEquals(243, scoreKeeper.getBestScorePoints().get(2).score, .001);
-	}
-	@Test
-	public void verifyGeneratesSmoothedSearchProportions() throws Exception
-	{
-		List<TrialResult> results = runModel(PAGAN_PARAMETER_SOURCE); 
-		assertEquals(0, results.get(100).smoothedSearchProportion, .001); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint);
-		assertEquals("some non-zero number...",.849, results.get(100).smoothedSearchProportion, .001); 
-	}
-	private void runAndScorePoint(double[] parameters, int score)
-	{
-		PaganParameterSource source = new PaganParameterSource(parameters); 
-		results = runModel(source); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(score, point.score, .001);
-	}
-//	@Test
-	public void verifyTracksHighestScoreAcrossMultipleResults() throws Exception
-	{
-		PaganParameterSource source1 = new PaganParameterSource(new double[]{2.0, 2.67, 1.55, 0.28}); 
-		results = runModel(source1); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(270, point.score, .001);
-		assertEquals(source1, point.parameterSource);
-		bestPoint = scoreKeeper.getBestPoint(); 
-		assertEquals(270, bestPoint.score, .001); 
-		assertEquals(source1, bestPoint.parameterSource);
-		results = runModel(PAGAN_PARAMETER_SOURCE); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(168, point.score, .001);
-		assertEquals(PAGAN_PARAMETER_SOURCE, point.parameterSource);
-		bestPoint = scoreKeeper.getBestPoint(); 
-		assertEquals(168, bestPoint.score, .001); 
-		assertEquals(PAGAN_PARAMETER_SOURCE, bestPoint.parameterSource);
-		PaganParameterSource source2 = new PaganParameterSource(new double[]{4.0, 2.67, 1.55, 0.28}); 
-		results = runModel(source2); 
-		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
-		point = scoreKeeper.getCurrentPoint(); 
-		assertEquals(237, point.score, .001);
-		assertEquals(source2, point.parameterSource);
-		bestPoint = scoreKeeper.getBestPoint(); 
-		assertEquals(168, bestPoint.score, .001); 
-		assertEquals(PAGAN_PARAMETER_SOURCE, bestPoint.parameterSource);
-	}
-	
 	protected List<TrialResult> runModel(PaganParameterSource paganParameterSource)
 	{
 		model = new PaganModel(true, paganParameterSource); 

@@ -44,7 +44,7 @@ public abstract class ScoreKeeper
 	{
 		this.parameterSource = parameterSource; 
 		this.parameterPoint = parameterPoint; 
-		totalScore = 0; 
+		initTotals(); 
 		for (int i = 0; i < SraParameters.TRAINING_TRIALS; i++)
 		{
 			calculateTotalScore(results, i); 
@@ -52,12 +52,14 @@ public abstract class ScoreKeeper
 		comparePoints();
 		smoothSearchDepths(results); 
 	}
+
 	protected void comparePoints()
 	{
 		currentPoint = new ScorePoint(totalScore, this.parameterSource, this.parameterPoint);
 		scorePoints.add(currentPoint); 
 		rebuildBestPoints(); 
 	}
+	protected abstract void initTotals();
 	protected abstract void calculateTotalScore(List<TrialResult> results, int i); 
 	protected abstract void rebuildBestPoints(); 
 	public abstract void scoreOnePaganModelRun(List<TrialResult> results);
@@ -70,7 +72,7 @@ public abstract class ScoreKeeper
 		{
 			inputSearchProportions[i] = results.get(i).searchProportion; 
 		}
-		PaganFilter filter = new PaganFilter(50, .05); //TODO make window and lambda parameters
+		PaganFilter filter = new PaganFilter(SraParameters.PAGAN_FILTER_WINDOW, SraParameters.PAGAN_FILTER_LAMBDA); 
 		double[] smoothedSearchProportions = filter.filter(inputSearchProportions); 
 		for (int i = 0; i < results.size(); i++)
 		{

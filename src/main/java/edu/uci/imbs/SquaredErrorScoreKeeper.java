@@ -17,6 +17,10 @@ public class SquaredErrorScoreKeeper extends ScoreKeeper
 	{
 		super(subjectData, weight); 
 	}
+	protected void initTotals()
+	{
+		totalScore = 0;
+	}
 	protected void calculateTotalScore(List<TrialResult> results, int i)
 	{
 		totalScore += scoreTrial(i, results.get(i));

@@ -13,6 +13,8 @@ public class SraParameters
 	public static int STOCHASTIC_RUNS_PER_PARAMETER_POINT = 1; 
 	public static int TRAINING_TRIALS = 100;
 	public static int BEST_SCORE_POINTS_SIZE = 50;
+	public static int PAGAN_FILTER_WINDOW = 50;
+	public static double PAGAN_FILTER_LAMBDA = .05;
 	
 	public static void resetForTesting()
 	{
@@ -22,6 +24,8 @@ public class SraParameters
 		STOCHASTIC_RUNS_PER_PARAMETER_POINT = 1; 
 		TRAINING_TRIALS = 100; 
 		BEST_SCORE_POINTS_SIZE = 50; 
+		PAGAN_FILTER_WINDOW = 50; 
+		PAGAN_FILTER_LAMBDA = .05; 
 		RANDOMS = new Randoms((int) SEED); 
 		
 	}
