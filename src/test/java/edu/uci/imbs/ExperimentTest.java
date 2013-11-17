@@ -2,7 +2,8 @@
 
 package edu.uci.imbs;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.io.FileWriter;
 import java.util.List;
@@ -25,6 +26,13 @@ public class ExperimentTest {
 		SraParameters.resetForTesting(); 
 		SraParameters.STOCHASTIC = false; 
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
+	}
+	@Test
+	public void verifyDataLoadedFromClassLoader() throws Exception
+	{
+		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
+		experiment.loadConfigurationDataFromClassLoaderResource("exp2p1.mat");
+		assertEquals(200, experiment.getTrials().size()); 
 	}
 	@Test
 	public void verifyDataLoadedOnlyOnceAtInitialization() throws Exception
