@@ -24,6 +24,7 @@ public class SraModelTest
 		BasicConfigurator.configure();
 //		Logger.getRootLogger().setLevel(Level.DEBUG);
 		Logger.getRootLogger().setLevel(Level.ERROR);
+//		Logger.getRootLogger().setLevel(Level.INFO);
 	}
 	@Before
 	public void setUp() throws Exception
@@ -53,8 +54,11 @@ public class SraModelTest
 	public void verifyStochasticModelGeneratesLikelihood() throws Exception
 	{
 		SraParameters.STOCHASTIC = true; 
+//		SraParameters.TRAINING_TRIALS = 100; 
 		SraParameters.TRAINING_TRIALS = 3; 
+//		SraParameters.STOCHASTIC_RUNS_PER_PARAMETER_POINT = 10000; 
 		SraParameters.STOCHASTIC_RUNS_PER_PARAMETER_POINT = 100; 
+//		SraParameters.NUMBER_TRIALS_EACH_VALIDITY_REPRESENTS = 10; 
 		SraParameters.NUMBER_TRIALS_EACH_VALIDITY_REPRESENTS = 100; 
 		model = new SraModel<String>(); 
 		Result<String> result = model.run(); 

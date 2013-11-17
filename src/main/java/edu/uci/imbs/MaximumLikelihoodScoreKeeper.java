@@ -28,7 +28,7 @@ public class MaximumLikelihoodScoreKeeper extends ScoreKeeper
 	{
 		totalProduct = totalProduct * results.get(i).proportionMatched; 
 		totalScore = StrictMath.log(totalProduct); 
-		logger.debug(i+" product: "+totalProduct+" log: "+totalScore+" matched: "+results.get(i).proportionMatched);
+		logger.info(i+" product: "+totalProduct+" log: "+totalScore+" matched: "+results.get(i).proportionMatched);
 	}
 	protected void rebuildBestPoints()
 	{

@@ -48,9 +48,10 @@ public class SraModel<R> extends PersistentModel<R> implements FitnessTracker
 		{
 			//FIXME 
 //			experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
-			experiment.loadConfigurationData("/Users/stevedoubleday/git/stochastic-self-regulating-accumulator/target/classes/exp2p1.mat");
+			experiment.loadConfigurationDataFromClassLoaderResource("exp2p1.mat"); 
+//			experiment.loadConfigurationData("/Users/stevedoubleday/git/stochastic-self-regulating-accumulator/target/classes/exp2p1.mat");
 		}
-		catch (IOException e)
+		catch (Exception e)
 		{
 			throw new RuntimeException(e);
 		}

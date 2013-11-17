@@ -4,9 +4,13 @@ package edu.uci.imbs;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Logger;
 
 import com.jmatio.io.MatFileReader;
 import com.jmatio.types.MLArray;
@@ -34,6 +38,7 @@ import com.jmatio.types.MLDouble;
 
 public class Experiment {
 
+	private static Logger logger = Logger.getLogger(Experiment.class);
 	private static final String TRUTH = "truth";
 	private static final String ANSWERS = "answers";
 	private static final String DATA = "data";
@@ -51,6 +56,12 @@ public class Experiment {
 		dataLoaded = false; 
 	}
 
+	public void loadConfigurationDataFromClassLoaderResource(String resource) throws Exception
+	{
+		URL url = ClassLoader.getSystemResource(resource); 
+		logger.debug("Experiment:  attempting to load "+resource+" from: "+url.toString());
+		loadConfigurationData(new File(url.toURI()));
+	}
 	public void loadConfigurationData(File file) throws IOException {
 		if (!dataLoaded)
 		{
@@ -62,10 +73,6 @@ public class Experiment {
 	}
 	public void loadConfigurationData(String filename) throws IOException {
 		loadConfigurationData(new File(filename)); 
-	}
-	public void loadConfigurationDataFromClassloader(String string)
-	{
-		reader = new MatFileReader(); 
 	}
 	public double[][] getSubjectData()
 	{
@@ -127,6 +134,7 @@ public class Experiment {
 	public double[] getCueValidities() {
 		return cueValidities;
 	}
+
 
 
 }
