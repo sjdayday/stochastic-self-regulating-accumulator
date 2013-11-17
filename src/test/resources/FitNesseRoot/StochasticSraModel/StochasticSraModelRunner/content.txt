@@ -27,7 +27,7 @@ Uncomment the following line to rebuild a parameter space from an existing file 
 |Static Boolean field to update is|STOCHASTIC|
 |Array parameter named|Number of stochastic cue validities per parameter point|with values|1000|
 |Static Integer field to update is|STOCHASTIC_RUNS_PER_PARAMETER_POINT|
-|Array parameter named|Size of best points list|with values|6|
+|Array parameter named|Size of best points list|with values|2|
 |Static Integer field to update is|BEST_SCORE_POINTS_SIZE|
 |Array parameter named|Number of trials each validity represents|with values|100|
 |Static Integer field to update is|NUMBER_TRIALS_EACH_VALIDITY_REPRESENTS|
@@ -94,4 +94,4 @@ Uncomment the next statement to use an iterated grid search of the parameter spa
 To execute the scenarios with the parameters above, remove the comment:  "|run scenarios|"
 It's a good idea to keep this line commented until you have changed the parameters as you want them for a particular scenario set, and tested that they are accepted, and that the size of the parameter space is reasonable. 
 
-|note|run scenarios|
+|run scenarios|

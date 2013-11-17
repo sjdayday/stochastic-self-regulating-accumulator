@@ -5,13 +5,11 @@ package edu.uci.imbs;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.TreeSet;
 
 
 public class SquaredErrorScoreKeeper extends ScoreKeeper
 {
 
-	private List<TrialScoreKeeper> trialScoreKeepers;
 	private List<TrialResult> consolidatedTrialResults;
 	public SquaredErrorScoreKeeper(double[][] subjectData, double weight)
 	{
