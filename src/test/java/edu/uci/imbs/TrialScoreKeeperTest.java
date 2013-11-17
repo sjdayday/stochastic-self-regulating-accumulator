@@ -1,3 +1,5 @@
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
+
 package edu.uci.imbs;
 
 import static org.junit.Assert.*;
@@ -30,6 +32,17 @@ public class TrialScoreKeeperTest
 		checkProportion("", 0.75); 
 		buildAndScoreAndGetBestTrialResult(1, 0); 
 		checkProportion("", 0.6); 
+	}
+	@Test
+	public void verifyCountsNumberOfTrials() throws Exception
+	{
+		assertEquals(0, tsk.getTrialsScored()); 
+		buildAndScoreAndGetBestTrialResult(0, 2); 
+		assertEquals(1, tsk.getTrialsScored()); 
+		buildAndScoreAndGetBestTrialResult(0, 2); 
+		assertEquals("same trial still bumps counter",2, tsk.getTrialsScored()); 
+		buildAndScoreAndGetBestTrialResult(1, 3); 
+		assertEquals(3, tsk.getTrialsScored()); 
 	}
 	@Test
 	public void verifyReturnsResultWithMostCommonCombinationOfChoiceAndSearchDepth() throws Exception

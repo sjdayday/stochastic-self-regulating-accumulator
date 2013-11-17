@@ -1,3 +1,5 @@
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
+
 package edu.uci.imbs;
 
 import org.grayleaves.utility.ParameterPoint;
@@ -8,9 +10,9 @@ public class ScorePoint implements Comparable<Object>
 	public ParameterSource parameterSource;
 	private ParameterPoint parameterPoint;
 
-	public ScorePoint(double sumSquaredError, ParameterSource parameterSource, ParameterPoint parameterPoint)
+	public ScorePoint(double score, ParameterSource parameterSource, ParameterPoint parameterPoint)
 	{
-		score = sumSquaredError; 
+		this.score = score; 
 		this.parameterSource = parameterSource; 
 		this.parameterPoint = parameterPoint; 
 	}

@@ -1,3 +1,5 @@
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
+
 package edu.uci.imbs;
 
 import static org.junit.Assert.*;
@@ -8,7 +10,7 @@ import org.grayleaves.utility.ParameterPoint;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ScoreKeeperTest
+public class SquaredErrorScoreKeeperTest
 {
 
 	private static final PaganParameterSource PAGAN_PARAMETER_SOURCE = new PaganParameterSource(new double[]{3.7, 2.67, 1.55, 0.28});
@@ -27,9 +29,10 @@ public class ScoreKeeperTest
 		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 		subjectData = experiment.getSubjectData(); 
-		scoreKeeper = new ScoreKeeper(subjectData, 1); 
+		scoreKeeper = new SquaredErrorScoreKeeper(subjectData, 1); 
 		parameterPoint = new TestingParameterPoint(1); 
-		ScoreKeeper.resetForTesting(); 
+		SraParameters.resetForTesting(); 
+		SraParameters.STOCHASTIC_RUNS_PER_PARAMETER_POINT = 5; 
 	}
 	@Test
 	public void verifyAssociatesParameterPointWithScorePoint() throws Exception
@@ -43,7 +46,9 @@ public class ScoreKeeperTest
 	public void verifyModelWithBaselineParametersScoresCorrectlyAgainstFirst100CasesOfSubjectData() throws Exception
 	{
 		List<TrialResult> results = runModel(PAGAN_PARAMETER_SOURCE); 
-		assertEquals(168, scoreKeeper.score(results, model.getParameterSource(), parameterPoint), .001); 
+		scoreKeeper.score(results, model.getParameterSource(), parameterPoint); 
+		point = scoreKeeper.getCurrentPoint(); 
+		assertEquals(168, point.score, .001);
 		assertEquals(new PaganParameterSource(new double[]{3.7, 2.67, 1.55, 0.28}), 
 				scoreKeeper.getCurrentParameterSource()); 
 		assertFalse("different point won't match",(new PaganParameterSource(new double[]{3.6, 2.67, 1.55, 0.28})).equals( 
@@ -61,7 +66,7 @@ public class ScoreKeeperTest
 	@Test
 	public void verifyTracksPointsInDescendingOrderUpToConfigurableLimit() throws Exception
 	{
-		ScoreKeeper.BEST_SCORE_POINTS_SIZE = 3; 
+		SraParameters.BEST_SCORE_POINTS_SIZE = 3; 
 		assertEquals(0, scoreKeeper.getBestScorePoints().size());
 		runAndScorePoint(new double[]{2.0, 2.67, 1.55, 0.28}, 270); 
 		assertEquals(1, scoreKeeper.getBestScorePoints().size());

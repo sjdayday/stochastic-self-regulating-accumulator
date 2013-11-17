@@ -1,6 +1,6 @@
-package edu.uci.imbs;
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
 
-import static org.junit.Assert.assertEquals;
+package edu.uci.imbs;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +13,9 @@ public class TrialScoreKeeper
 	private double subjectDataCue;
 	private double total;
 	private double matched;
-	private double proportionMatched;
+	protected double proportionMatched;
 	private Map<TrialResult, Integer> countsMap;
+	private int trialsScored;
 
 	public TrialScoreKeeper(double subjectDataAlternative, double subjectDataCue)
 	{
@@ -22,6 +23,7 @@ public class TrialScoreKeeper
 		this.subjectDataCue = subjectDataCue; 
 		total = 0;
 		matched = 0; 
+		trialsScored = 0; 
 		countsMap = new HashMap<TrialResult, Integer>(); 
 	}
 
@@ -29,6 +31,7 @@ public class TrialScoreKeeper
 	{
 		addResultToCountsMap(result); 
 		calculateProportionMatched(result); 
+		trialsScored++; 
 	}
 
 	private void addResultToCountsMap(TrialResult result)
@@ -85,9 +88,10 @@ public class TrialScoreKeeper
 		sb.append(countsMap.get(bestResult)); 
 		return sb.toString();
 	}
-//	assertEquals("Result: 0\t1\t0.0\t0.0\t0.0 Count: 1\n" +
-//			"Result: 0\t2\t0.0\t0.0\t0.0 Count: 2\n" +
-//			"Result: 1\t3\t0.0\t0.0\t0.0 Count: 2\n" +
-//			"Best Result: Result: 0\t2\t0.0\t0.0\t0.4 Count: 2", 
+
+	public int getTrialsScored()
+	{
+		return trialsScored;
+	}
 
 }

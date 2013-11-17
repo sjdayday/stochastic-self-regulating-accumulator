@@ -1,13 +1,17 @@
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
+
 package edu.uci.imbs;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import cc.mallet.util.Randoms;
 
 public class ValidityBuilder
 {
-
+	private static Logger logger = Logger.getLogger(MaximumLikelihoodScoreKeeper.class);
 	private List<BetaParameterPair> betaDistributionParameters;
 	private double[] actualValidities;
 	private int numberTrialsEachValidityRepresents;
@@ -40,7 +44,9 @@ public class ValidityBuilder
 	}
 	public double getNextValidity(int i)
 	{
-		if (stochastic) return randoms.nextBeta(betaDistributionParameters.get(i).alpha, betaDistributionParameters.get(i).beta); 
+		if (stochastic) 
+			return randoms.nextBeta(betaDistributionParameters.get(i).alpha, betaDistributionParameters.get(i).beta); 
+//		return randoms.nextUniform(); 
 		else return actualValidities[i]; 
 	}
 
@@ -59,7 +65,19 @@ public class ValidityBuilder
 				cueValidities[i] = getNextValidity(i); 
 			}
 		}
+		logger.debug(printValidities()); 
 		return cueValidities;
+	}
+	private String printValidities()
+	{
+		StringBuffer sb = new StringBuffer(); 
+		for (int i = 0; i < cueValidities.length; i++)
+		{
+			sb.append(cueValidities[i]);
+			sb.append(" "); 
+		}
+		sb.append("\n");
+		return sb.toString(); 
 	}
 
 }

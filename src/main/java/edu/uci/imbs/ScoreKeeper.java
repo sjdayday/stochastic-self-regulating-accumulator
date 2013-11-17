@@ -1,40 +1,37 @@
+/* Copyright (c) 2013, Regents of the University of California.  See License.txt for details */
+
 package edu.uci.imbs;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import org.apache.log4j.Logger;
 import org.grayleaves.utility.ParameterPoint;
 
-public class ScoreKeeper
+import edu.uci.imbs.integration.SraModel;
+
+public abstract class ScoreKeeper
 {
+	private static Logger logger = Logger.getLogger(ScoreKeeper.class);
+	protected double[][] subjectData;
+	protected double subjectDataAlternative;
+	protected double subjectDataCue;
+	protected double trialAlternative;
+	protected double trialCue;
+	protected double deltaAlternative;
+	protected double squaredError;
+	protected double deltaCue;
+	protected double weight;
+	protected double totalScore;
+	protected ParameterSource parameterSource;
+	protected ScorePoint currentPoint;
+	protected ScorePoint bestPoint;
+	protected ParameterPoint parameterPoint;
+	protected List<ScorePoint> bestScorePoints;
+	protected SortedSet<ScorePoint> scorePoints;
 
-	private static final int TRAINING_TRIALS = 100;
-	public static int BEST_SCORE_POINTS_SIZE = 50;
-	private double[][] subjectData;
-	private double subjectDataAlternative;
-	private double subjectDataCue;
-	private double trialAlternative;
-	private double trialCue;
-	private double deltaAlternative;
-	private double squaredError;
-	private double deltaCue;
-	private double weight;
-	private double sumSquaredError;
-	private ParameterSource parameterSource;
-	private ScorePoint currentPoint;
-	private ScorePoint bestPoint;
-	private ParameterPoint parameterPoint;
-	private List<ScorePoint> bestScorePoints;
-	private SortedSet<ScorePoint> scorePoints;
-
-
-	public static void resetForTesting()
-	{
-		BEST_SCORE_POINTS_SIZE = 1; 
-	}
 	public ScoreKeeper(double[][] subjectData, double weight)
 	{
 		this.subjectData = subjectData; 
@@ -43,21 +40,30 @@ public class ScoreKeeper
 		scorePoints = new TreeSet<ScorePoint>(); 
 	}
 
-	public double score(List<TrialResult> results, ParameterSource parameterSource, ParameterPoint parameterPoint)
+	public void score(List<TrialResult> results, ParameterSource parameterSource, ParameterPoint parameterPoint)
 	{
 		this.parameterSource = parameterSource; 
 		this.parameterPoint = parameterPoint; 
-		sumSquaredError = 0; 
-		for (int i = 0; i < TRAINING_TRIALS; i++)
+		totalScore = 0; 
+		for (int i = 0; i < SraParameters.TRAINING_TRIALS; i++)
 		{
-			sumSquaredError += scoreTrial(i, results.get(i)); 
+			calculateTotalScore(results, i); 
 		}
 		comparePoints();
 		smoothSearchDepths(results); 
-		return sumSquaredError;
 	}
-
-	private void smoothSearchDepths(List<TrialResult> results)
+	protected void comparePoints()
+	{
+		currentPoint = new ScorePoint(totalScore, this.parameterSource, this.parameterPoint);
+		scorePoints.add(currentPoint); 
+		rebuildBestPoints(); 
+	}
+	protected abstract void calculateTotalScore(List<TrialResult> results, int i); 
+	protected abstract void rebuildBestPoints(); 
+	public abstract void scoreOnePaganModelRun(List<TrialResult> results);
+	public abstract List<TrialResult> getConsolidatedTrialResults();
+	
+	protected void smoothSearchDepths(List<TrialResult> results)
 	{
 		double[] inputSearchProportions = new double[results.size()]; 
 		for (int i = 0; i < inputSearchProportions.length; i++)
@@ -70,36 +76,6 @@ public class ScoreKeeper
 		{
 			results.get(i).smoothedSearchProportion = smoothedSearchProportions[i]; 
 		}
-	}
-	protected void comparePoints()
-	{
-		currentPoint = new ScorePoint(sumSquaredError, this.parameterSource, this.parameterPoint);
-		scorePoints.add(currentPoint); 
-		rebuildBestPoints(); 
-	}
-	private void rebuildBestPoints()
-	{
-		bestPoint = scorePoints.first(); 
-		bestScorePoints = new ArrayList<ScorePoint>(); 
-		Iterator<ScorePoint> iterator = scorePoints.iterator();
-		int limit = (scorePoints.size() < BEST_SCORE_POINTS_SIZE) ? scorePoints.size() : BEST_SCORE_POINTS_SIZE; 
-		for (int i = 0; i < limit; i++)
-		{
-			bestScorePoints.add(iterator.next()); 
-		}
-	}
-
-	private double scoreTrial(int i, TrialResult trialResult)
-	{
-		squaredError = 0; 
-		subjectDataAlternative = subjectData[i][0]; 
-		subjectDataCue = subjectData[i][1]; 
-		trialAlternative = (double) trialResult.choice; 
-		trialCue = (double) trialResult.searchDepth;
-		deltaAlternative = trialAlternative - subjectDataAlternative; 
-		deltaCue = trialCue - subjectDataCue; 
-		squaredError = (weight*(deltaAlternative*deltaAlternative))+(deltaCue*deltaCue); 
-		return squaredError;
 	}
 
 	public ParameterSource getCurrentParameterSource()
@@ -121,6 +97,5 @@ public class ScoreKeeper
 	{
 		return bestScorePoints;
 	}
-
 
 }
