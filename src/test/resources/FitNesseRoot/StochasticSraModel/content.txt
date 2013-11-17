@@ -26,4 +26,6 @@
 !path ${M2REPO}/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar
 !path ${M2REPO}/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar
 !path ${M2REPO}/net/sourceforge/jmatio/jmatio/1.0/jmatio-1.0.jar
+!path ${M2REPO}/cc/mallet/mallet/2.0.7/mallet-2.0.7.jar
+!path ${M2REPO}/log4j/log4j/1.2.17/log4j-1.2.17.jar
 
