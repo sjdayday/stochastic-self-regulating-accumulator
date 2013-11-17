@@ -2,8 +2,10 @@
 
 package edu.uci.imbs;
 
-public interface ParameterSource {
+public interface ParameterSource extends Comparable<Object>
+{
 
 	double getParameter(int index);
 
+	double[] getParameters(); 
 }

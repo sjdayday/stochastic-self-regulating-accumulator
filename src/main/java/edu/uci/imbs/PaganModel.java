@@ -29,8 +29,9 @@ public class PaganModel implements Model {
 	private double cumulativeEvidenceForAlternativeA;
 	private double cumulativeEvidenceForAlternativeB;
 
-	public PaganModel(ParameterSource parameterSource) {
+	public PaganModel(boolean feedback, ParameterSource parameterSource) {
 		this.parameterSource = parameterSource; 
+		this.feedback = feedback; 
 	}
 
 	public void participate(Experiment experiment) {
@@ -50,14 +51,6 @@ public class PaganModel implements Model {
 
 	public ParameterSource getParameterSource() {
 		return parameterSource;
-	}
-
-	public void runo() {
-		for (int i = 0; i < numberTrials; i++) {
-			for (int j = 0; j < numberCues; j++) {
-				
-			}
-		}
 	}
 
 	public List<TrialResult> getResults() {
@@ -82,7 +75,7 @@ public class PaganModel implements Model {
 		return parameterSource.getParameter(2);
 	}
 	/**
-	 * Step-size in confidence
+	 * Step-size in confidence (learning rate)
 	 * @return
 	 */
 	protected double getLambda() {
@@ -191,7 +184,16 @@ public class PaganModel implements Model {
 		        }
 		    } 
 		    result.searchDepth = i+1;
+		    calculateSearchProportion(trial, result);
 		}  
+	}
+
+	protected void calculateSearchProportion(Trial trial, TrialResult result)
+	{
+		int baselineCue = trial.firstDiscriminatingCue() + 1;
+		double possibleCues = (double) trial.getCueProfile().length - baselineCue ; 
+		double discriminatingCuesSearched = ((result.searchDepth - baselineCue) >= 0) ? (double) result.searchDepth - baselineCue : 0d;
+		result.searchProportion = (possibleCues > 0) ? discriminatingCuesSearched / possibleCues : 0;  
 	}
 
 	private boolean cueEvidenceFavorsAlternativeA() {
@@ -242,6 +244,7 @@ public class PaganModel implements Model {
 		evaluatedChoice = (alternative.equals(trial.getCorrectAlternative())) ? 1 : 0;
 	}
 
+	@SuppressWarnings("unused")
 	private void printExpermentVariables() {
 		StringBuffer sb = null; 
 		sb = new StringBuffer(); 

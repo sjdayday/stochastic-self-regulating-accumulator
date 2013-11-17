@@ -39,25 +39,25 @@ public class Trial {
 	public static Boolean[] A_POSITIVE = new Boolean[]{true, false};
 	public static Boolean[] B_POSITIVE = new Boolean[]{false, true};
 	private Boolean[][] cueProfile;
-	private Double[] oddsPerCueForAlternativeA;
-	private Double[] oddsPerCueForAlternativeB;
-	private Double[] cumulativeOddsForAlternativeA;
-	private Double[] cumulativeOddsForAlternativeB;
+	private double[] oddsPerCueForAlternativeA;
+	private double[] oddsPerCueForAlternativeB;
+	private double[] cumulativeOddsForAlternativeA;
+	private double[] cumulativeOddsForAlternativeB;
 	private Alternative correctAlternative;
-	private Double[] cueValidities;
-	private Double[] cueLogOdds;
+	private double[] cueValidities;
+	private double[] cueLogOdds;
 
-	public Trial(Double[] cueValidities) {
+	public Trial(double[] cueValidities) {
 		validate(cueValidities); 
 		buildLogOddsForCueValidities(); 
 	}
-	private void validate(Double[] cueValidities) {
+	private void validate(double[] cueValidities) {
 		if ((cueValidities == null) || (cueValidities.length == 0))
 			throw new IllegalArgumentException("Trial.setCueValidities:  cue validities must be not-null and contain at least one element.");  
 		this.cueValidities = cueValidities; 
 	}
 	private void buildLogOddsForCueValidities() {
-		cueLogOdds = new Double[cueValidities.length]; 
+		cueLogOdds = new double[cueValidities.length]; 
 		for (int i = 0; i < cueValidities.length; i++) {
 			cueLogOdds[i] = StrictMath.log(cueValidities[i]/(1-cueValidities[i])); 
 		}
@@ -76,18 +76,18 @@ public class Trial {
 		this.cumulativeOddsForAlternativeA = accumulateOddsForAlternative(Alternative.A); 
 		this.cumulativeOddsForAlternativeB = accumulateOddsForAlternative(Alternative.B); 
 	}
-	private Double[] accumulateOddsForAlternative(Alternative alternative) {
-		Double[] cumulativeOdds = new Double[cueValidities.length];
-		Double total = 0d;
-		Double[] tempOdds = (alternative.equals(Alternative.A)) ? oddsPerCueForAlternativeA : oddsPerCueForAlternativeB; 
+	private double[] accumulateOddsForAlternative(Alternative alternative) {
+		double[] cumulativeOdds = new double[cueValidities.length];
+		double total = 0d;
+		double[] tempOdds = (alternative.equals(Alternative.A)) ? oddsPerCueForAlternativeA : oddsPerCueForAlternativeB; 
 		for (int i = 0; i < tempOdds.length; i++) {
 			total+= tempOdds[i]; 
 			cumulativeOdds[i] = total; 
 		}
 		return cumulativeOdds;
 	}
-	private Double[] buildOddsPerCueForAlternative(Alternative alternative) {
-		Double[] odds = new Double[cueValidities.length];
+	private double[] buildOddsPerCueForAlternative(Alternative alternative) {
+		double[] odds = new double[cueValidities.length];
 		for (int i = 0; i < odds.length; i++) {
 			odds[i] = (onlyThisAlternativePositive(i, alternative)) ? cueLogOdds[i] : 0;
 		}
@@ -114,5 +114,19 @@ public class Trial {
 		if ((requestedCue < 0) || (requestedCue >= cueProfile.length)) throw new IllegalArgumentException("Trial.getResponseForAlternativeForCue:  the cue requested must not be less than 0 or greater than: "+(cueProfile.length-1)+" was "+requestedCue);
 		Boolean[] cue = cueProfile[requestedCue];  
 		return (cue[alternative.arrayPosition()]) ? 1 : 0;
+	}
+	public int firstDiscriminatingCue()
+	{
+		int cue = 0;
+		for (; cue < cueProfile.length; cue++)
+		{
+			if (cueProfile[cue][0] != cueProfile[cue][1]) break;
+		}
+		if (cue == cueProfile.length) cue--; 
+		return cue;
+	}
+	protected double[] getCueValidities()
+	{
+		return cueValidities;
 	}
 }
