@@ -10,10 +10,9 @@ import java.util.TreeSet;
 import org.apache.log4j.Logger;
 import org.grayleaves.utility.ParameterPoint;
 
-import edu.uci.imbs.integration.SraModel;
-
 public abstract class ScoreKeeper
 {
+	@SuppressWarnings("unused")
 	private static Logger logger = Logger.getLogger(ScoreKeeper.class);
 	protected double[][] subjectData;
 	protected double subjectDataAlternative;

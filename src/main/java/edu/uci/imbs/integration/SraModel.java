@@ -2,7 +2,6 @@
 
 package edu.uci.imbs.integration;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +13,11 @@ import org.grayleaves.utility.ParameterPoint;
 import org.grayleaves.utility.PersistentModel;
 import org.grayleaves.utility.Result;
 
-import edu.uci.imbs.MaximumLikelihoodScoreKeeper;
-import edu.uci.imbs.ScoreKeeper;
 import edu.uci.imbs.Experiment;
 import edu.uci.imbs.PaganModel;
 import edu.uci.imbs.PaganParameterSource;
+import edu.uci.imbs.ScoreKeeper;
 import edu.uci.imbs.ScoreKeeperFactory;
-import edu.uci.imbs.SquaredErrorScoreKeeper;
 import edu.uci.imbs.ScorePoint;
 import edu.uci.imbs.SraParameters;
 import edu.uci.imbs.TrialResult;
@@ -36,7 +33,6 @@ public class SraModel<R> extends PersistentModel<R> implements FitnessTracker
 	private PaganModel paganModel;
 	private PaganParameterSource paganParameterSource;
 	private ParameterPoint point;
-	private static final String SLASH = System.getProperty("file.separator"); 
 	public SraModel()
 	{
 		build();
@@ -46,22 +42,19 @@ public class SraModel<R> extends PersistentModel<R> implements FitnessTracker
 		experiment = new Experiment(new double[]{.99, .91, .87, .78, .77, .75, .71, .56, .51});
 		try
 		{
-			//FIXME 
-//			experiment.loadConfigurationData("src"+SLASH+"main"+SLASH+"resources"+SLASH+"exp2p1.mat");
 			experiment.loadConfigurationDataFromClassLoaderResource("exp2p1.mat"); 
-//			experiment.loadConfigurationData("/Users/stevedoubleday/git/stochastic-self-regulating-accumulator/target/classes/exp2p1.mat");
 		}
 		catch (Exception e)
 		{
 			throw new RuntimeException(e);
 		}
 		subjectData = experiment.getSubjectData(); 
-		scoreKeeper = ScoreKeeperFactory.buildScoreKeeper(subjectData, 1); 
 	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public Result<R> run() throws ModelException
 	{
+		if (scoreKeeper == null) scoreKeeper = ScoreKeeperFactory.buildScoreKeeper(subjectData, 1); 
 		result = new ListResult<R>(); 
 		List<TrialResult> results = runPaganModel();
 		scoreKeeper.score(results, paganParameterSource, point); 
