@@ -5,6 +5,7 @@ package edu.uci.imbs;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
@@ -17,6 +18,10 @@ public class MaximumLikelihoodScoreKeeper extends ScoreKeeper
 	{
 		super(subjectData, weight); 
 		buildTrialScoreKeepers(subjectData);
+	}
+	protected void initTotals()
+	{
+		totalScore = 0;
 		totalProduct = 1; 
 	}
 	protected void calculateTotalScore(List<TrialResult> results, int i)
@@ -27,9 +32,9 @@ public class MaximumLikelihoodScoreKeeper extends ScoreKeeper
 	}
 	protected void rebuildBestPoints()
 	{
-		bestPoint = scorePoints.first(); 
+		bestPoint = scorePoints.last(); 
 		bestScorePoints = new ArrayList<ScorePoint>(); 
-		Iterator<ScorePoint> iterator = scorePoints.iterator();
+		Iterator<ScorePoint> iterator = ((TreeSet<ScorePoint>) scorePoints).descendingIterator();
 		int limit = (scorePoints.size() < SraParameters.BEST_SCORE_POINTS_SIZE) ? scorePoints.size() : SraParameters.BEST_SCORE_POINTS_SIZE; 
 		for (int i = 0; i < limit; i++)
 		{
